@@ -29,12 +29,19 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+            ApplyRotation(rotationSpeed);
         }
 
         else if(Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward * rotationSpeed * Time.deltaTime);
+            ApplyRotation(-rotationSpeed);
         }
+    }
+
+    void ApplyRotation(float rotation)
+    {
+        rb.freezeRotation = true;
+        transform.Rotate(Vector3.forward * rotation * Time.deltaTime);
+        rb.freezeRotation = false;
     }
 }
