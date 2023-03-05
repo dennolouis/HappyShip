@@ -15,13 +15,23 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
 
     bool isTransitioning = false;
+    bool collisionDisabled = false;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
+
+    private void Update()
+    {
+        //diable collsion while play testing
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionDisabled = !collisionDisabled;
+        }
+    }
     private void OnCollisionEnter(Collision other)
     {
-        if(isTransitioning) return;
+        if(isTransitioning || collisionDisabled) return;
 
         switch(other.gameObject.tag)
         {
@@ -51,7 +61,7 @@ public class CollisionHandler : MonoBehaviour
         audioSource.PlayOneShot(crash);
 
         crashParticle.Play();
-        
+
         Invoke("ReloadLevel", levelLoadDelay);
     }
 
