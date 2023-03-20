@@ -55,14 +55,22 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         isTransitioning = true;
-        GetComponent<Movement>().enabled = false;
+        //GetComponent<Movement>().enabled = false;
+        Destroy(GetComponent<Movement>());
 
         audioSource.Stop();
         audioSource.PlayOneShot(crash);
 
         crashParticle.Play();
 
-        Invoke("ReloadLevel", levelLoadDelay);
+        Invoke("SpawnAtLastCheckPoint", levelLoadDelay);
+    }
+
+    void SpawnAtLastCheckPoint()
+    {
+        FindObjectOfType<CheckPointSystem>().SpawnRocket();
+        FindObjectOfType<CameraController>().LookAtRocket();
+        Destroy(gameObject, 3);
     }
 
     void StartSuccessSequence()

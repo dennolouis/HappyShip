@@ -10,6 +10,11 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        LookAtRocket();
+    }
+
+    public void LookAtRocket()
+    {
         // find the Cinemachine virtual camera in the world
         virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
 
