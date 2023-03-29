@@ -55,7 +55,6 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         isTransitioning = true;
-        //GetComponent<Movement>().enabled = false;
         Destroy(GetComponent<Movement>());
 
         audioSource.Stop();
@@ -68,6 +67,7 @@ public class CollisionHandler : MonoBehaviour
 
     void SpawnAtLastCheckPoint()
     {
+        gameObject.tag = "Friendly";
         FindObjectOfType<CheckPointSystem>().SpawnRocket();
         FindObjectOfType<CameraController>().LookAtRocket();
         Destroy(gameObject, 3);
