@@ -12,12 +12,15 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem successParticle;
     [SerializeField] ParticleSystem crashParticle;
 
+    Player player;
+
     AudioSource audioSource;
 
     bool isTransitioning = false;
     bool collisionDisabled = false;
     private void Start()
     {
+        player = FindObjectOfType<Player>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -62,7 +65,11 @@ public class CollisionHandler : MonoBehaviour
 
         crashParticle.Play();
 
-        Invoke("SpawnAtLastCheckPoint", levelLoadDelay);
+        if(player.HasLife())
+        {
+            Invoke("SpawnAtLastCheckPoint", levelLoadDelay);
+            player.UpdateLives(-1);
+        }
     }
 
     void SpawnAtLastCheckPoint()
