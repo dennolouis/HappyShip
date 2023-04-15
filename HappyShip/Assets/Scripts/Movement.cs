@@ -13,11 +13,16 @@ public class Movement : MonoBehaviour
    
     Rigidbody rb;
     AudioSource audioSource;
+
+    bool thrust = false;
+    bool left = false;
+    bool right = false;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        FindObjectOfType<MovementController>().SetMovement(this);
     }
 
     // Update is called once per frame
@@ -28,7 +33,7 @@ public class Movement : MonoBehaviour
 
     void ProcessInput()
     {
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(KeyCode.W) || thrust)
         {
             Thrust();
         }
@@ -37,12 +42,12 @@ public class Movement : MonoBehaviour
             StopThrust();
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || left)
         {
             ApplyRotation(rotationSpeed);
         }
 
-        else if(Input.GetKey(KeyCode.D))
+        else if(Input.GetKey(KeyCode.D) || right)
         {
             ApplyRotation(-rotationSpeed);
         }
@@ -74,5 +79,20 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * rotation * Time.deltaTime);
         rb.freezeRotation = false;
+    }
+
+    public void SetThust(bool val)
+    {
+        thrust = val;
+    }
+
+    public void SetLeft(bool val)
+    {
+        left = val;
+    }
+
+    public void SetRight(bool val)
+    {
+        right = val;
     }
 }
