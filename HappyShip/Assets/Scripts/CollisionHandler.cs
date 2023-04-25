@@ -92,8 +92,9 @@ public class CollisionHandler : MonoBehaviour
 
         Invoke("LoadNextLevel", levelLoadDelay);
     }
-    void ReloadLevel()
+    public void ReloadLevel()
     {
+        Time.timeScale = 1;
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentIndex);
     }
