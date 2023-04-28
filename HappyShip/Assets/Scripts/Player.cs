@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     public bool HasLife()
     {
-        return lives > 0;
+        return lives > 1;
     }
 
     public void UpdateLives(int x)
