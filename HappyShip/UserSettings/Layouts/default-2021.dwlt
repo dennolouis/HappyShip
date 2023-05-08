@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 6922
+  controlID: 7924
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 6923
+  controlID: 7925
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 6924
+  controlID: 7926
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   - {fileID: 16}
   - {fileID: 17}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -402,9 +402,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f45e0000
-      m_LastClickedID: 24308
-      m_ExpandedIDs: a2d2ffff50eaffff16fbffff
+      m_SelectedIDs: 7c5f0000
+      m_LastClickedID: 24444
+      m_ExpandedIDs: 02b0ffffeab0ffff18fbffff085f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -420,7 +420,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 8}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -654,9 +654,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 16.516863, y: 23.473322, z: 26.981201}
+    m_Target: {x: 6.5668797, y: -22.914497, z: 136.68886}
     speed: 2
-    m_Value: {x: 16.516863, y: 23.473322, z: 26.981201}
+    m_Value: {x: 6.5668797, y: -22.914497, z: 136.68886}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -703,13 +703,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.15484194, y: -0.25128588, z: 0.04076107, w: -0.95457935}
+    m_Target: {x: -0.11402475, y: -0.024737723, z: 0.002840228, w: -0.9931655}
     speed: 2
-    m_Value: {x: -0.15484194, y: -0.25128588, z: 0.04076107, w: -0.95457935}
+    m_Value: {x: -0.11402476, y: -0.024737723, z: 0.002840228, w: -0.9931655}
   m_Size:
-    m_Target: 28.39454
+    m_Target: 79.348236
     speed: 2
-    m_Value: 28.39454
+    m_Value: 79.348236
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -834,22 +834,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs/Rockets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs/Rockets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/dennolouis/Documents/UnityProjects/HappyShip/HappyShip
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 159}
-    m_SelectedIDs: 44630000
-    m_LastClickedID: 25412
-    m_ExpandedIDs: 000000001863000000ca9a3b
+    scrollPos: {x: 0, y: 107}
+    m_SelectedIDs: 40990000
+    m_LastClickedID: 39232
+    m_ExpandedIDs: 00000000a2630000bc63000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -877,7 +877,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001863000000ca9a3b
+    m_ExpandedIDs: 00000000a263000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
