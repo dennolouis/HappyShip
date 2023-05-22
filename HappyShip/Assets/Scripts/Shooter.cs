@@ -48,5 +48,7 @@ public class Shooter : MonoBehaviour
 
         // Apply a force to the projectile's z-axis relative to its transform
         rb.AddRelativeForce(Vector3.forward * projectileSpeed, ForceMode.VelocityChange);
+
+        Destroy(projectile, 3f);
     }
 }

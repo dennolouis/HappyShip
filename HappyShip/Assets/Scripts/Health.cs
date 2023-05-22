@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int health = 5;
+
+    void GetHit()
     {
-        
+        health--;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.gameObject.tag == "Projectile")
+        {
+            Destroy(collision.gameObject);
+            GetHit();
+        }
+
     }
 }

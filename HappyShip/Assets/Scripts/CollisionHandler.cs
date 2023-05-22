@@ -39,13 +39,13 @@ public class CollisionHandler : MonoBehaviour
         switch(other.gameObject.tag)
         {
             case "Friendly":
-                print("nice");
                 break;
             case "Finish":
                 StartSuccessSequence();
                 break;
-            case "Fuel":
-                print("fuel");
+            case "Player":
+                Destroy(other.gameObject);
+                player.UpdateLives(1);
                 break;
             default:
                 StartCrashSequence();
@@ -74,10 +74,10 @@ public class CollisionHandler : MonoBehaviour
 
     void SpawnAtLastCheckPoint()
     {
-        gameObject.tag = "Friendly";
+        //gameObject.tag = "Friendly";
         FindObjectOfType<CheckPointSystem>().SpawnRocket();
         FindObjectOfType<CameraController>().LookAtRocket();
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 10);
     }
 
     void StartSuccessSequence()
