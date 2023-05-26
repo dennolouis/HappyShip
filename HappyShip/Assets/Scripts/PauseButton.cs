@@ -25,9 +25,4 @@ public class PauseButton : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void ReloadLevel()
-    {
-        FindObjectOfType<CollisionHandler>().ReloadLevel();
-    }
-
 }
