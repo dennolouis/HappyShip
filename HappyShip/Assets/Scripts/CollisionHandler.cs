@@ -99,7 +99,7 @@ public class CollisionHandler : MonoBehaviour
         SceneManager.LoadScene(currentIndex);
     }
 
-    void LoadNextLevel()
+    void LoadNextLevel() //TODO Move to level changer
     {
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
         int nextLevel = currentIndex + 1;
