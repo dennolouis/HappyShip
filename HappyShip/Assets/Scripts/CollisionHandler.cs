@@ -54,6 +54,14 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            player.UpdateLives(1);
+        }
+    }
+
 
     void StartCrashSequence()
     {
