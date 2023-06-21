@@ -78,6 +78,10 @@ public class CollisionHandler : MonoBehaviour
             Invoke("SpawnAtLastCheckPoint", levelLoadDelay);
             player.UpdateLives(-1);
         }
+        else
+        {
+            FindObjectOfType<GameUI>().ShowContinueButton();
+        }
     }
 
     void SpawnAtLastCheckPoint()
