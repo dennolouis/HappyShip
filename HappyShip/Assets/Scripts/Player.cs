@@ -23,4 +23,10 @@ public class Player : MonoBehaviour
         lives += x;
         heartsTmp.text = lives.ToString();
     }
+
+    public int GetLives()
+    {
+        return lives;
+    }
+
 }

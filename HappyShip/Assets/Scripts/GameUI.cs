@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameUI : MonoBehaviour
 {
 
     [SerializeField] GameObject continueButton;
-    // Start is called before the first frame update
+    [SerializeField] TMP_Text heartsTmp;
+
+    Player player;
+
     void Start()
     {
+        player = FindAnyObjectByType<Player>();
+        SetHearts(player.GetLives());
+
         HideContinueButton();
     }
 
@@ -23,6 +30,11 @@ public class GameUI : MonoBehaviour
         continueButton.SetActive(false);
     }
 
+
+    public void SetHearts(int x)
+    {
+        heartsTmp.text = x.ToString();
+    }
 
 
 }
