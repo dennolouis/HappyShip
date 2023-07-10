@@ -40,12 +40,11 @@ public class CollisionHandler : MonoBehaviour
         {
             case "Friendly":
                 break;
-            case "Finish":
-                StartSuccessSequence();
-                break;
             case "Player":
                 Destroy(other.gameObject);
-                player.UpdateLives(1);
+                break;
+            case "Finish":
+                StartSuccessSequence();
                 break;
             default:
                 StartCrashSequence();
@@ -63,10 +62,11 @@ public class CollisionHandler : MonoBehaviour
     }
 
 
-    void StartCrashSequence()
+    public void StartCrashSequence()
     {
         isTransitioning = true;
         Destroy(GetComponent<Movement>());
+        Destroy(GetComponent<Collider>());
 
         audioSource.Stop();
         audioSource.PlayOneShot(crash);
@@ -84,12 +84,13 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    void SpawnAtLastCheckPoint()
+    public void SpawnAtLastCheckPoint()
     {
-        //gameObject.tag = "Friendly";
+        gameObject.tag = "Friendly";
+        isTransitioning = true;
         FindObjectOfType<CheckPointSystem>().SpawnRocket();
         FindObjectOfType<CameraController>().LookAtRocket();
-        Destroy(gameObject, 10);
+        Destroy(gameObject, 3);
     }
 
     void StartSuccessSequence()

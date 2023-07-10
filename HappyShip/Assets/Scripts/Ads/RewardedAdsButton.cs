@@ -9,6 +9,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     string _adUnitId = null; // This will remain null for unsupported platforms
 
+
+    bool rocketIsSpawned = false;
+
     void Awake()
     {
         // Get the Ad Unit ID for the current platform:
@@ -20,6 +23,12 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
         // Disable the button until the ad is ready to show:
         _showAdButton.interactable = false;
+    }
+
+
+    private void Start()
+    {
+        //LoadAd();
     }
 
     // Call this public method when you want to get an ad ready to show.
@@ -61,8 +70,18 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
+            FindAnyObjectByType<GameUI>().HideContinueButton();
+
+            Invoke("Reward", 0.5f);
         }
     }
+
+    void Reward()
+    {
+        FindAnyObjectByType<CollisionHandler>().SpawnAtLastCheckPoint();
+        //LoadAd();
+    }
+
 
     // Implement Load and Show Listener error callbacks:
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)

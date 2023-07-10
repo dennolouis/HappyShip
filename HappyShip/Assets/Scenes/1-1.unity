@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 3e5399bd195de7649b874f58c1b9f8a3, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: efd1c33efd2d58340b88804268e6833f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.35060468, g: 0.44347823, b: 0.5737153, a: 1}
+  m_IndirectSpecularColor: {r: 0.42879292, g: 0.5634494, b: 0.7113903, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2642,7 +2642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09040f1cf8be43049d3a2a883c2c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 1
+  lives: 5
 --- !u!4 &1278708615
 Transform:
   m_ObjectHideFlags: 0
@@ -3409,8 +3409,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549627703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1, y: 150.9, z: 0}
-  m_LocalScale: {x: 18.046751, y: 18.046751, z: 18.046751}
+  m_LocalPosition: {x: 8.5, y: 146.36, z: 0}
+  m_LocalScale: {x: 13.420827, y: 13.420827, z: 13.420827}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1166551664}
@@ -3587,7 +3587,7 @@ GameObject:
   - component: {fileID: 1687883517}
   - component: {fileID: 1687883516}
   m_Layer: 0
-  m_Name: Void
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3731,8 +3731,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698693469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8, y: 115.5, z: 0}
-  m_LocalScale: {x: 18.046751, y: 18.046751, z: 18.046751}
+  m_LocalPosition: {x: -8.7, y: 120.04, z: 0}
+  m_LocalScale: {x: 13.420827, y: 13.420827, z: 13.420827}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1166551664}
@@ -4680,7 +4680,7 @@ PrefabInstance:
     - target: {fileID: 5206756435850508667, guid: feefa991c707348399356dc552af03b4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6222558275933861289, guid: feefa991c707348399356dc552af03b4,
         type: 3}
@@ -4830,6 +4830,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 873154682667305453, guid: fee6c51ad756d4494a57201565690b1d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873154682667305453, guid: fee6c51ad756d4494a57201565690b1d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 873154682667305453, guid: fee6c51ad756d4494a57201565690b1d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7814601680025621610, guid: fee6c51ad756d4494a57201565690b1d,
         type: 3}
       propertyPath: onTapEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target

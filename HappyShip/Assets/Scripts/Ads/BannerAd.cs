@@ -29,7 +29,7 @@ public class BannerAd : MonoBehaviour
         //_hideBannerButton.interactable = false;
 
         //// Set the banner position:
-        //Advertisement.Banner.SetPosition(_bannerPosition);
+        Advertisement.Banner.SetPosition(_bannerPosition);
 
         //// Configure the Load Banner button to call the LoadBanner() method when clicked:
         //_loadBannerButton.onClick.AddListener(LoadBanner);
