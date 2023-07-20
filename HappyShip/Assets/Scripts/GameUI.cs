@@ -9,6 +9,8 @@ public class GameUI : MonoBehaviour
     [SerializeField] GameObject continueButton;
     [SerializeField] TMP_Text heartsTmp;
 
+    [SerializeField] GameObject controls;
+    
     Player player;
 
     void Start()
@@ -29,6 +31,17 @@ public class GameUI : MonoBehaviour
     {
         continueButton.SetActive(false);
     }
+
+    public void HideControls()
+    {
+        controls.SetActive(false);
+    }
+
+    public void ShowControls()
+    {
+        controls.SetActive(true);
+    }
+
 
 
     public void SetHearts(int x)
