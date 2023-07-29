@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Friendly
   - Projectile
+  - Heart
+  - Star
+  - Coin
   layers:
   - Default
   - TransparentFX

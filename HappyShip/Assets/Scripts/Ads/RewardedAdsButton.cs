@@ -79,7 +79,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     void Reward()
     {
         FindAnyObjectByType<CollisionHandler>().SpawnAtLastCheckPoint();
-        //LoadAd();
+        LoadAd();
     }
 
 
