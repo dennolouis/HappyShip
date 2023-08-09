@@ -55,7 +55,8 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch(other.gameObject.tag)
+        print(other.gameObject.tag);
+        switch (other.gameObject.tag)
         {
             case "Player":
                 player.UpdateLives(1);
@@ -72,6 +73,8 @@ public class CollisionHandler : MonoBehaviour
             case "Coin":
                 //TODO: Coin logic stuff
                 break;
+            case "Friendly":
+                return;
         }
 
         if (!other.gameObject.GetComponent<CheckPoint>()) //does not destroy checkpoints
