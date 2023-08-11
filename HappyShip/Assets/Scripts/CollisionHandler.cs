@@ -41,6 +41,7 @@ public class CollisionHandler : MonoBehaviour
             case "Friendly":
                 break;
             case "Player":
+            case "Projectile":
                 Destroy(other.gameObject);
                 break;
             case "Finish":
@@ -55,7 +56,6 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.gameObject.tag);
         switch (other.gameObject.tag)
         {
             case "Player":
@@ -74,6 +74,7 @@ public class CollisionHandler : MonoBehaviour
                 //TODO: Coin logic stuff
                 break;
             case "Friendly":
+            case "Enemy":
                 return;
         }
 

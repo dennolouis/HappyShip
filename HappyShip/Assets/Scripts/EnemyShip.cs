@@ -33,6 +33,7 @@ public class EnemyShip : MonoBehaviour
 
     void RemoveOscillator()
     {
-        Destroy(oscillator);
+        if(oscillator)
+            Destroy(oscillator);
     }
 }

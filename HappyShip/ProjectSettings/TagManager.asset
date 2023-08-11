@@ -9,6 +9,7 @@ TagManager:
   - Heart
   - Star
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX

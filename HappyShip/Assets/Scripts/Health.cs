@@ -16,13 +16,13 @@ public class Health : MonoBehaviour
         }
     }
 
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.gameObject.tag == "Projectile")
-    //    {
-    //        Destroy(collision.gameObject);
-    //        GetHit();
-    //    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Projectile")
+        {
+            Destroy(collision.gameObject);
+            GetHit();
+        }
 
-    //}
+    }
 }
