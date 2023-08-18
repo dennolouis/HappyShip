@@ -7,9 +7,17 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float shootDelay = 1f;
     [SerializeField] float projectileSpeed = 10f;
-    
+    [SerializeField] float aimAngle = 45f; // The auto-aim angle in degrees
+
     float timeSinceLastShot = 0f;
-    
+
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -20,34 +28,44 @@ public class Shooter : MonoBehaviour
         }
         else
         {
-            // Cast a ray from this gameObject's position
-            Ray ray = new Ray(transform.position, transform.forward);
-
-            // Check if the ray hits a gameObject with a Health script attached
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo))
+            // Perform a raycast sweep in the specified angle range
+            for (float angle = -aimAngle; angle <= aimAngle; angle += 5f) // You can adjust the angle increment
             {
-                Health healthScript = hitInfo.collider.gameObject.GetComponent<Health>();
-                if (healthScript != null)
+                Quaternion rotation = Quaternion.Euler(0f, angle, 0f);
+                Vector3 direction = rotation * transform.forward;
+
+                // Cast a ray from this gameObject's position
+                Ray ray = new Ray(transform.position, direction);
+
+                // Check if the ray hits a gameObject with a Health script attached
+                RaycastHit hitInfo;
+                if (Physics.Raycast(ray, out hitInfo))
                 {
-                    // Shoot the projectile
-                    ShootProjectile();
-                    timeSinceLastShot = 0f;
+                    Health healthScript = hitInfo.collider.gameObject.GetComponent<Health>();
+                    if (healthScript != null)
+                    {
+                        // Shoot the projectile
+                        ShootProjectile(direction);
+                        timeSinceLastShot = 0f;
+                        break; // Stop the loop after the first valid target is found
+                    }
                 }
             }
         }
     }
 
-    void ShootProjectile()
+    void ShootProjectile(Vector3 direction)
     {
+        audioSource.Play();
+
         // Instantiate the projectile prefab
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
         // Add a rigidbody component to the projectile
         Rigidbody rb = projectile.AddComponent<Rigidbody>();
 
-        // Apply a force to the projectile's z-axis relative to its transform
-        rb.AddRelativeForce(Vector3.forward * projectileSpeed, ForceMode.VelocityChange);
+        // Apply a force to the projectile in the specified direction
+        rb.velocity = direction * projectileSpeed;
 
         Destroy(projectile, 3f);
     }
