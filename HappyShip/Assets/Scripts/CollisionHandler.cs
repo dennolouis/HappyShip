@@ -67,11 +67,11 @@ public class CollisionHandler : MonoBehaviour
                 break;
 
             case "Star":
-                //TODO: Star logic stuff
+                player.CollectStar();
                 break;
 
             case "Coin":
-                //TODO: Coin logic stuff
+                player.CollectCoin();
                 break;
             case "Friendly":
             case "Enemy":

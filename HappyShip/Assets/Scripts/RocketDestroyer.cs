@@ -7,6 +7,13 @@ public class RocketDestroyer : MonoBehaviour
     [SerializeField] private float delayBeforeForce = 2f;
     [SerializeField] private float delayBetweenForces = 5f;
 
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -25,6 +32,8 @@ public class RocketDestroyer : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeForce);
 
+        PlayThrustSound();
+
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -41,6 +50,13 @@ public class RocketDestroyer : MonoBehaviour
             Vector3 localForce = transform.forward * forceAmount;
             rb.AddForce(localForce, ForceMode.Impulse);
         }
+    }
+
+    void PlayThrustSound()
+    {
+        if(audioSource)
+            audioSource.Play();
+
     }
 }
 
