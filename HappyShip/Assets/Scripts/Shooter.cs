@@ -9,6 +9,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float aimAngle = 45f; // The auto-aim angle in degrees
 
+    GameObject target;
+
     float timeSinceLastShot = 0f;
 
     AudioSource audioSource;
@@ -28,31 +30,30 @@ public class Shooter : MonoBehaviour
         }
         else
         {
-            // Perform a raycast sweep in the specified angle range
-            for (float angle = -aimAngle; angle <= aimAngle; angle += 5f) // You can adjust the angle increment
-            {
-                Quaternion rotation = Quaternion.Euler(0f, angle, 0f);
-                Vector3 direction = rotation * transform.forward;
-
-                // Cast a ray from this gameObject's position
-                Ray ray = new Ray(transform.position, direction);
-
-                // Check if the ray hits a gameObject with a Health script attached
-                RaycastHit hitInfo;
-                if (Physics.Raycast(ray, out hitInfo))
-                {
-                    Health healthScript = hitInfo.collider.gameObject.GetComponent<Health>();
-                    if (healthScript != null)
-                    {
-                        // Shoot the projectile
-                        ShootProjectile(direction);
-                        timeSinceLastShot = 0f;
-                        break; // Stop the loop after the first valid target is found
-                    }
-                }
-            }
+            if (target)
+                transform.LookAt(target.transform);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Health>())
+            target = other.gameObject;
+    }
+
+    void Shoot()
+    {
+        audioSource.Play();
+
+        // Instantiate the projectile prefab
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
+        // Add a rigidbody component to the projectile
+        Rigidbody rb = projectile.AddComponent<Rigidbody>();
+
+        rb.AddRelativeForce(transform.forward * projectileSpeed, ForceMode.Impulse);
+    }
+
 
     void ShootProjectile(Vector3 direction)
     {
@@ -69,4 +70,41 @@ public class Shooter : MonoBehaviour
 
         Destroy(projectile, 3f);
     }
+
+    void RayCastShooting()
+    {
+        // Perform a raycast sweep in the specified angle range
+        for (float angle = -aimAngle; angle <= aimAngle; angle += 5f) // You can adjust the angle increment
+        {
+            Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+            Vector3 direction = rotation * transform.forward;
+
+            // Cast a ray from this gameObject's position
+            Ray ray = new Ray(transform.position, direction);
+
+            // Check if the ray hits a gameObject with a Health script attached
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                Health healthScript = hitInfo.collider.gameObject.GetComponent<Health>();
+                if (healthScript != null)
+                {
+                    // Visualize the raycast
+                    Debug.DrawRay(ray.origin, ray.direction * hitInfo.distance, Color.red, 0.1f);
+
+                    // Shoot the projectile
+                    ShootProjectile(direction);
+                    timeSinceLastShot = 0f;
+                    break; // Stop the loop after the first valid target is found
+                }
+            }
+            else
+            {
+                // Visualize the raycast
+                Debug.DrawRay(ray.origin, ray.direction * 100f, Color.green, 0.1f);
+            }
+        }
+
+    }
+
 }
