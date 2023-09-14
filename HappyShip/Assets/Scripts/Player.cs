@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] int collectedCoins;
     [SerializeField] int collectedStars;
 
+    [SerializeField] int totalCoins;
+    [SerializeField] List<int> totalStarsList;
+
     GameUI gameUI;
     SoundManager soundManager;
 
@@ -48,5 +51,28 @@ public class Player : MonoBehaviour
         collectedStars++;
         soundManager.PlayCollectStarSound();
     }
+
+    public List<int> GetTotalStarList()
+    {
+        return totalStarsList;
+    }
+
+    public int GetTotalStars()
+    {
+        int sum = 0;
+
+        foreach(int stars in totalStarsList)
+        {
+            sum += stars;
+        }
+
+        return sum;
+    }
+
+    public int GetTotalCoins()
+    {
+        return totalCoins;
+    }
+
 
 }

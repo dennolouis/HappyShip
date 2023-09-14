@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PulseUI : MonoBehaviour
 {
-    public Transform uiItemTransform; // Reference to the UI item's Transform component
+    Transform uiItemTransform; // Reference to the UI item's Transform component
     public float pulseDuration = 1.0f; // Duration of one pulse cycle
     public float minScale = 0.8f; // Minimum scale during the pulse
     public float maxScale = 1.2f; // Maximum scale during the pulse
