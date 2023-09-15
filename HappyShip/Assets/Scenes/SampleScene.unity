@@ -3614,6 +3614,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  collectedCoins: 0
+  collectedStars: 0
+  totalCoins: 0
+  totalStarsList: 
 --- !u!4 &1278708615
 Transform:
   m_ObjectHideFlags: 0
@@ -7960,6 +7964,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1714480898}
+    - target: {fileID: 7814601680677526849, guid: fee6c51ad756d4494a57201565690b1d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 7814601680870400059, guid: fee6c51ad756d4494a57201565690b1d,
         type: 3}
       propertyPath: onTapEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target

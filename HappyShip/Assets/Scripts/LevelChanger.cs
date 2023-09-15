@@ -23,4 +23,9 @@ public class LevelChanger : MonoBehaviour
     {
         FadeToLevel(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void QuitToMenu()
+    {
+        FadeToLevel(0);
+    }
 }

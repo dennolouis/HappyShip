@@ -63,6 +63,7 @@ public class Level : MonoBehaviour
     {
         levelHandler.PlayerSelectLevelSound();
         print(levelNumber);
+        FindObjectOfType<LevelChanger>().FadeToLevel(levelNumber);
     }
 
     public void SetLevelNumber(int levelNumber)
