@@ -60,26 +60,31 @@ public class CollisionHandler : MonoBehaviour
         {
             case "Player":
                 player.UpdateLives(1);
+                Destroy(other.gameObject);
                 break;
 
             case "Heart":
                 player.UpdateLives(1);
+                Destroy(other.gameObject);
                 break;
 
             case "Star":
                 player.CollectStar();
+                Destroy(other.gameObject);
                 break;
 
             case "Coin":
                 player.CollectCoin();
+                Destroy(other.gameObject);
                 break;
             case "Friendly":
+                return;
             case "Enemy":
                 return;
         }
 
-        if (!other.gameObject.GetComponent<CheckPoint>()) //does not destroy checkpoints
-            Destroy(other.gameObject);
+        //if (!other.gameObject.GetComponent<CheckPoint>()) //does not destroy checkpoints
+        //    Destroy(other.gameObject);
     }
 
 

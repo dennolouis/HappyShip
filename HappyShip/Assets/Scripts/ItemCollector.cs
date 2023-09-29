@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    public float magnetRange = 5f;
-    public float magnetForce = 15f;
+    float magnetRange = 5f;
+    float magnetForce = 15000f;
 
     private void Update()
     {
@@ -14,7 +14,7 @@ public class ItemCollector : MonoBehaviour
         foreach (Collider coinCollider in nearbyCoins)
         {
             Vector3 magnetDirection = transform.position - coinCollider.transform.position;
-            coinCollider.GetComponent<Rigidbody>().AddForce(magnetDirection.normalized * magnetForce);
+            coinCollider.GetComponent<Rigidbody>().AddForce(magnetDirection.normalized * magnetForce * Time.deltaTime);
         }
     }
 }
