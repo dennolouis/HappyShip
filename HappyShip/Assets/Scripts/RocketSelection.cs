@@ -11,6 +11,13 @@ public class RocketSelection : MonoBehaviour
     [SerializeField] Button nextButton;
     [SerializeField] Button prevButton;
 
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         DisableAllRockets();
@@ -33,6 +40,7 @@ public class RocketSelection : MonoBehaviour
         DisablePreviousRocket();
         currentIndex = (currentIndex + 1) % rockets.Count;
         EnableCurrentRocket();
+        audioSource.Play();
     }
 
     public void Previous()
@@ -40,6 +48,7 @@ public class RocketSelection : MonoBehaviour
         DisablePreviousRocket();
         currentIndex = (currentIndex - 1 + rockets.Count) % rockets.Count;
         EnableCurrentRocket();
+        audioSource.Play();
     }
 
     private void EnableCurrentRocket()
