@@ -3,7 +3,7 @@ using UnityEngine;
 public class ItemCollector : MonoBehaviour
 {
     float magnetRange = 5f;
-    float magnetForce = 15000f;
+    float magnetForce = 25000f;
 
     private void Update()
     {
