@@ -214,8 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf81b01ed32914b2c8fe3385f6a7582a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetRange: 6
-  magnetForce: 30
 --- !u!1 &2667755816191936838
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,14 +413,13 @@ GameObject:
   - component: {fileID: 957884844197882241}
   - component: {fileID: 1059656654177084517}
   - component: {fileID: 8218471577883687858}
-  - component: {fileID: 1757558410862310567}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &957884844197882241
 Transform:
   m_ObjectHideFlags: 0
@@ -454,7 +451,7 @@ MonoBehaviour:
     type: 3}
   shootDelay: 1
   projectileSpeed: 60
-  aimAngle: 90
+  aimAngle: 30
 --- !u!82 &8218471577883687858
 AudioSource:
   m_ObjectHideFlags: 0
@@ -465,7 +462,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 52287e42ee01f43e4a95c10ab6b6997f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c7865fd595be8a046a018f3e24771dd6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -551,19 +548,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!135 &1757558410862310567
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4894049130399538777}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 15
-  m_Center: {x: 0, y: 0, z: 15}
 --- !u!1001 &2667755815105396441
 PrefabInstance:
   m_ObjectHideFlags: 0

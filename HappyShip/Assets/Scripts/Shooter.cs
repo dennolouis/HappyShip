@@ -7,9 +7,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float shootDelay = 1f;
     [SerializeField] float projectileSpeed = 10f;
-    [SerializeField] float aimAngle = 45f; // The auto-aim angle in degrees
-
-    GameObject target;
+    [SerializeField] float aimAngle = 10f; // The auto-aim angle in degrees
 
     float timeSinceLastShot = 0f;
 
@@ -30,28 +28,8 @@ public class Shooter : MonoBehaviour
         }
         else
         {
-            if (target)
-                transform.LookAt(target.transform);
+             RayCastShooting();
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.GetComponent<Health>())
-            target = other.gameObject;
-    }
-
-    void Shoot()
-    {
-        audioSource.Play();
-
-        // Instantiate the projectile prefab
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-        // Add a rigidbody component to the projectile
-        Rigidbody rb = projectile.AddComponent<Rigidbody>();
-
-        rb.AddRelativeForce(transform.forward * projectileSpeed, ForceMode.Impulse);
     }
 
 
@@ -91,6 +69,7 @@ public class Shooter : MonoBehaviour
                 {
                     // Visualize the raycast
                     Debug.DrawRay(ray.origin, ray.direction * hitInfo.distance, Color.red, 0.1f);
+                    print("hii");
 
                     // Shoot the projectile
                     ShootProjectile(direction);
