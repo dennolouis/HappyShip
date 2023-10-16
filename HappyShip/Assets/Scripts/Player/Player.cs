@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    [SerializeField] int rocketIndex;
+
     [SerializeField] int lives = 5;
 
     [SerializeField] int collectedCoins;
@@ -19,6 +22,16 @@ public class Player : MonoBehaviour
     {
         gameUI = FindAnyObjectByType<GameUI>();
         soundManager = FindAnyObjectByType<SoundManager>();
+    }
+
+    public int GetRocketIndex()
+    {
+        return rocketIndex;
+    }
+
+    public void SetRocketIndex(int i)
+    {
+        rocketIndex = i;
     }
 
     public bool HasLife()
