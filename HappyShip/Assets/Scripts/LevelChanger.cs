@@ -28,4 +28,10 @@ public class LevelChanger : MonoBehaviour
     {
         FadeToLevel(0);
     }
+
+    public int GetLevelIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
 }

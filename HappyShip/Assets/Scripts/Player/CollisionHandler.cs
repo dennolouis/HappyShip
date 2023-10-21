@@ -121,6 +121,7 @@ public class CollisionHandler : MonoBehaviour
 
     void StartSuccessSequence()
     {
+        player.Save();
         isTransitioning = true;
         GetComponent<Movement>().enabled = false;
 

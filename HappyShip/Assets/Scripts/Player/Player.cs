@@ -87,5 +87,13 @@ public class Player : MonoBehaviour
         return totalCoins;
     }
 
+    public void Save()
+    {
+        print("Player collected " + collectedStars.ToString() + " stars in level " + FindObjectOfType<LevelChanger>().GetLevelIndex());
+        print("Coins: " + collectedCoins.ToString());
+
+    }
+
+
 
 }
