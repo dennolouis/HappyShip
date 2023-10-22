@@ -599,7 +599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCheckPoint: {fileID: 575101417}
-  rocket: {fileID: 2667755815104151422, guid: 44d735d1a85994ae09b7c25bd8ab992b, type: 3}
 --- !u!4 &531391307
 Transform:
   m_ObjectHideFlags: 0
@@ -964,6 +963,11 @@ PrefabInstance:
     - target: {fileID: 6204721356247829674, guid: e07b22a9b63be45a59f2a5846971992f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204721356247829675, guid: e07b22a9b63be45a59f2a5846971992f,
+        type: 3}
+      propertyPath: _testMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6204721356247829677, guid: e07b22a9b63be45a59f2a5846971992f,

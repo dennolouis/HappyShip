@@ -1535,11 +1535,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09040f1cf8be43049d3a2a883c2c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketIndex: 0
   lives: 5
   collectedCoins: 0
   collectedStars: 0
   totalCoins: 0
-  totalStarsList: 020000000100000002000000000000000000000000000000000000000000000000000000
+  totalStarsList: 020000000100000002000000010000000200000000000000000000000000000000000000
 --- !u!4 &1167226546
 Transform:
   m_ObjectHideFlags: 0
