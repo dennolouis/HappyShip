@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.09228026, g: 0.42662537, b: 1.9280972, a: 1}
+  m_IndirectSpecularColor: {r: 0.07614096, g: 0.3993326, b: 1.9395936, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2909,7 +2909,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCheckPoint: {fileID: 575101417}
-  rocket: {fileID: 2667755815104151422, guid: 44d735d1a85994ae09b7c25bd8ab992b, type: 3}
 --- !u!4 &531391307
 Transform:
   m_ObjectHideFlags: 0
@@ -6635,6 +6634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09040f1cf8be43049d3a2a883c2c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketIndex: 0
   lives: 5
   collectedCoins: 0
   collectedStars: 0
@@ -6806,6 +6806,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.69, z: 1}
   m_Center: {x: 0, y: 0.87, z: 0}
+--- !u!114 &1324858247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324858239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f965f094ea20142ac821d82821259489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  destoryEffect: {fileID: 0}
+  destroyEffectDuration: 1
 --- !u!1001 &1326434508
 PrefabInstance:
   m_ObjectHideFlags: 0

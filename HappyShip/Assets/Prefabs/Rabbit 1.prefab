@@ -699,6 +699,7 @@ GameObject:
   - component: {fileID: 1478617513315877947}
   - component: {fileID: 3437778836070882363}
   - component: {fileID: 4661531219090152690}
+  - component: {fileID: -996311028390377814}
   m_Layer: 0
   m_Name: Rabbit 1
   m_TagString: Untagged
@@ -774,6 +775,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.44, z: 1}
   m_Center: {x: 0, y: 0.24, z: 0}
+--- !u!114 &-996311028390377814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572699182297663307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f965f094ea20142ac821d82821259489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  destoryEffect: {fileID: 0}
+  destroyEffectDuration: 1
 --- !u!1 &1572757661632963953
 GameObject:
   m_ObjectHideFlags: 0

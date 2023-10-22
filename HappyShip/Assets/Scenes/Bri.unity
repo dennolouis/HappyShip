@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 1.4467484, g: 0.43358675, b: 0.57515776, a: 1}
+  m_IndirectSpecularColor: {r: 1.4495417, g: 0.4349645, b: 0.5768141, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3946,7 +3946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCheckPoint: {fileID: 575101417}
-  rocket: {fileID: 0}
 --- !u!4 &531391307
 Transform:
   m_ObjectHideFlags: 0
@@ -7663,7 +7662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b020ddf9f51754ce0a36f8b6ca812c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabFolder: Prefabs/Rockets
 --- !u!1001 &975934112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9618,7 +9616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09040f1cf8be43049d3a2a883c2c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketIndex: 1
+  rocketIndex: 0
   lives: 5
   collectedCoins: 0
   collectedStars: 0
