@@ -26,6 +26,8 @@ public class Level : MonoBehaviour
     int levelNumber;
     Button btn;
 
+    Player player;
+
     private void Awake()
     {
         btn = GetComponent<Button>();
@@ -37,7 +39,8 @@ public class Level : MonoBehaviour
 
     void Start()
     {
-        levelHandler = FindObjectOfType<LevelHandler>();      
+        levelHandler = FindObjectOfType<LevelHandler>();
+        player = FindObjectOfType<Player>();
     }
 
     void ShowCollectedStars()
@@ -62,8 +65,14 @@ public class Level : MonoBehaviour
     void PlayLevel()
     {
         levelHandler.PlayerSelectLevelSound();
-        print(levelNumber);
+        SavePlayerRocketSelection();
         FindObjectOfType<LevelChanger>().FadeToLevel(levelNumber);
+    }
+
+    void SavePlayerRocketSelection()
+    {
+        player.SetRocketIndex(FindObjectOfType<RocketSelection>().GetCurrentIndex());
+        player.Save();
     }
 
     public void SetLevelNumber(int levelNumber)

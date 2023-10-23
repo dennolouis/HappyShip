@@ -13,6 +13,8 @@ public class RocketSelection : MonoBehaviour
 
     AudioSource audioSource;
 
+    Player player;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,6 +22,10 @@ public class RocketSelection : MonoBehaviour
 
     void Start()
     {
+        player = FindObjectOfType<Player>();
+
+        currentIndex = player.GetRocketIndex();
+
         DisableAllRockets();
         EnableCurrentRocket();
 
@@ -71,5 +77,10 @@ public class RocketSelection : MonoBehaviour
         {
             rocket.SetActive(false);
         }
+    }
+
+    public int GetCurrentIndex()
+    {
+        return currentIndex;
     }
 }
