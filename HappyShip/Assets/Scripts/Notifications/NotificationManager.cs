@@ -10,7 +10,7 @@ using Unity.Notifications.iOS;
 
 using UnityEngine;
 
-public class IOSNotifications : MonoBehaviour
+public class NotificationManager : MonoBehaviour
 {
     private int hours = 120; //5 days
     private int minutes;
@@ -63,13 +63,37 @@ public class IOSNotifications : MonoBehaviour
             Permission.RequestUserPermission("android.permission.POST_NOTIFICATIONS");
         }
 
+        //remove any notifications already displayed
+        AndroidNotificationCenter.CancelAllDisplayedNotifications();
+
+
+
+        var channel = new AndroidNotificationChannel()
+        {
+            Id = "channel_id",
+            Name = "Default Channel",
+            Importance = Importance.Default,
+            Description = "Generic notifications",
+        };
+        AndroidNotificationCenter.RegisterNotificationChannel(channel);
+
 
         var notification = new AndroidNotification();
         notification.Title = "Happy Ship";
         notification.Text = "Come Back!";
-        notification.FireTime = System.DateTime.Now.AddSeconds(10);
+        notification.FireTime = System.DateTime.Now.AddDays(5);
 
         AndroidNotificationCenter.SendNotification(notification, "channel_id");
+
+        var id = AndroidNotificationCenter.SendNotification(notification, "channel_id");
+
+        //reschedule notification
+        if (AndroidNotificationCenter.CheckScheduledNotificationStatus(id) == NotificationStatus.Scheduled)
+        {
+            AndroidNotificationCenter.CancelAllNotifications();
+            AndroidNotificationCenter.SendNotification(notification, "channel_id");
+        }
+
     }
 #endif
 }
