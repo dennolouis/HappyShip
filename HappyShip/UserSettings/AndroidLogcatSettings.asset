@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "a1c407df",
         "name": "com.DefaultCompany.HappyShip",
-        "processId": 10195,
+        "processId": 20250,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -24,6 +24,12 @@
             "deviceId": "a1c407df",
             "name": "com.DefaultCompany.HappyShip",
             "processId": 10195,
+            "exited": false
+        },
+        {
+            "deviceId": "a1c407df",
+            "name": "com.DefaultCompany.HappyShip",
+            "processId": 20250,
             "exited": false
         }
     ],

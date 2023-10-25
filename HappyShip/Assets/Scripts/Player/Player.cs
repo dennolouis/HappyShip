@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] int lives = 5;
 
+    [SerializeField] int adCount;
+
     int collectedCoins;
     int collectedStars;
 
@@ -132,22 +134,19 @@ public class Player : MonoBehaviour
         rocketIndex = data.GetRocketIndex();
         totalCoins = data.GetTotalCoins();
         totalStarsList = data.GetTotalStarList();
+        adCount = data.GetAdCount();
 
     }
 
-
-    void UseDefaultValues()
+    public int GetAdCount()
     {
-        List<int> starsList = new List<int>();
-        for(int i = 0; i < 9; i++)
-        {
-            starsList.Add(0);
-        }
-
-        totalStarsList = starsList;
-
+        return adCount;
     }
 
+    public void SetAdCount(int x)
+    {
+        adCount = x;
+    }
 
 
 }

@@ -8,6 +8,7 @@ public class PlayerData
     [SerializeField] int rocketIndex;
     [SerializeField] int totalCoins;
     [SerializeField] List<int> totalStarsList;
+    int adCount;
 
 
     public PlayerData(Player player)
@@ -15,6 +16,7 @@ public class PlayerData
         rocketIndex = player.GetRocketIndex();
         totalCoins = player.GetTotalCoins();
         totalStarsList = player.GetTotalStarList();
+        adCount = player.GetAdCount();
     }
 
     public int GetTotalCoins()
@@ -31,4 +33,10 @@ public class PlayerData
     {
         return rocketIndex;
     }
+
+    public int GetAdCount()
+    {
+        return adCount;
+    }
+
 }
