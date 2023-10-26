@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17300987, g: 0.046814114, b: 0.029813226, a: 1}
+  m_IndirectSpecularColor: {r: 0.17492186, g: 0.04681235, b: 0.02992402, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -736,7 +736,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCheckPoint: {fileID: 575101417}
-  rocket: {fileID: 2667755815104151422, guid: 44d735d1a85994ae09b7c25bd8ab992b, type: 3}
 --- !u!4 &531391307
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,11 +1874,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09040f1cf8be43049d3a2a883c2c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 5
-  collectedCoins: 0
-  collectedStars: 0
+  rocketIndex: 0
   totalCoins: 0
   totalStarsList: 
+  lives: 5
+  adCount: 0
 --- !u!4 &1278708615
 Transform:
   m_ObjectHideFlags: 0
@@ -2821,7 +2820,7 @@ PrefabInstance:
     - target: {fileID: 5206756435850508667, guid: feefa991c707348399356dc552af03b4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6222558275933861289, guid: feefa991c707348399356dc552af03b4,
         type: 3}
