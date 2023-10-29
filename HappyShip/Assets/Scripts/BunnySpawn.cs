@@ -8,6 +8,8 @@ public class BunnySpawn : MonoBehaviour
 
     [SerializeField] Vector3 spawnDirection;
 
+    [SerializeField] float lifeTime = 7f;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -27,7 +29,7 @@ public class BunnySpawn : MonoBehaviour
             anim.SetTrigger("Next");
 
 
-            Destroy(bunny, 10f);
+            Destroy(bunny, lifeTime);
 
         }
     }
