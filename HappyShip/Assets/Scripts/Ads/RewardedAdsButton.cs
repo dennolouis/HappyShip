@@ -28,7 +28,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
     private void Start()
     {
-        //LoadAd();
+        LoadAd();
     }
 
     // Call this public method when you want to get an ad ready to show.

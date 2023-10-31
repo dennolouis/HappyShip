@@ -17,6 +17,8 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
     private void Start()
     {
+        LoadAd();
+
         Player player = FindObjectOfType<Player>();
 
         int adCount = player.GetAdCount();
