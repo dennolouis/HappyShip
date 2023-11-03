@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "a1c407df",
         "name": "com.DefaultCompany.HappyShip",
-        "processId": 12666,
+        "processId": 18255,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,31 +11,37 @@
         {
             "deviceId": "a1c407df",
             "name": "com.DefaultCompany.HappyShip",
-            "processId": 21663,
-            "exited": false
-        },
-        {
-            "deviceId": "a1c407df",
-            "name": "com.DefaultCompany.HappyShip",
-            "processId": 22831,
-            "exited": false
-        },
-        {
-            "deviceId": "a1c407df",
-            "name": "com.DefaultCompany.HappyShip",
             "processId": 10195,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "a1c407df",
             "name": "com.DefaultCompany.HappyShip",
             "processId": 20250,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "a1c407df",
             "name": "com.DefaultCompany.HappyShip",
             "processId": 12666,
+            "exited": true
+        },
+        {
+            "deviceId": "a1c407df",
+            "name": "com.DefaultCompany.HappyShip",
+            "processId": 13752,
+            "exited": true
+        },
+        {
+            "deviceId": "a1c407df",
+            "name": "com.android.launcher3",
+            "processId": 2613,
+            "exited": false
+        },
+        {
+            "deviceId": "a1c407df",
+            "name": "com.DefaultCompany.HappyShip",
+            "processId": 18255,
             "exited": false
         }
     ],

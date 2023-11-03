@@ -12,7 +12,7 @@ using UnityEngine;
 
 public class NotificationManager : MonoBehaviour
 {
-    private int hours = 120; //5 days
+    private int hours = 72; //3 days
     private int minutes;
     private int seconds;
 
@@ -81,7 +81,8 @@ public class NotificationManager : MonoBehaviour
         var notification = new AndroidNotification();
         notification.Title = "Happy Ship";
         notification.Text = "Come Back!";
-        notification.FireTime = System.DateTime.Now.AddDays(5);
+        notification.LargeIcon = "icon_0";
+        notification.FireTime = System.DateTime.Now.AddDays(3);
 
         AndroidNotificationCenter.SendNotification(notification, "channel_id");
 
