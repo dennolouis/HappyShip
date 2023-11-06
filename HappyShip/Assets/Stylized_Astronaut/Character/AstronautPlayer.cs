@@ -24,6 +24,9 @@ public class AstronautPlayer : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
             anim.SetInteger("AnimationPar", 1);
+
+
+            transform.Translate(Vector3.forward * rotationSpeed * Time.deltaTime);
         }
 
         //print(other.gameObject.name);
