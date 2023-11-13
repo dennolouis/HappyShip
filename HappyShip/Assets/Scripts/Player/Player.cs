@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] int rocketIndex;
+    [SerializeField] List<bool> rockets;
 
     [SerializeField] int totalCoins;
     [SerializeField] List<int> totalStarsList;
@@ -147,6 +148,23 @@ public class Player : MonoBehaviour
     {
         adCount = x;
     }
+
+    public bool CheckIfPlayerHasRocket()
+    {
+        return rockets[rocketIndex];
+    }
+
+    public void BuyRocket()
+    {
+        if(totalCoins >= 200)
+        {
+            rockets[rocketIndex] = true;
+            totalCoins -= 200;
+            FindObjectOfType<CoinUI>().UpdateUI();
+        }
+        
+    }
+
 
 
 }

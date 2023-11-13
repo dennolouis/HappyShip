@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class RocketSelection : MonoBehaviour
 {
     [SerializeField] List<GameObject> rockets;
+    [SerializeField] GameObject rocketLock;
     private int currentIndex = 0;
     private GameObject previousRocket;
 
@@ -45,7 +46,9 @@ public class RocketSelection : MonoBehaviour
     {
         DisablePreviousRocket();
         currentIndex = (currentIndex + 1) % rockets.Count;
+        player.SetRocketIndex(currentIndex);
         EnableCurrentRocket();
+        UpdateRocketSelectionUI();
         audioSource.Play();
     }
 
@@ -53,7 +56,9 @@ public class RocketSelection : MonoBehaviour
     {
         DisablePreviousRocket();
         currentIndex = (currentIndex - 1 + rockets.Count) % rockets.Count;
+        player.SetRocketIndex(currentIndex);
         EnableCurrentRocket();
+        UpdateRocketSelectionUI();
         audioSource.Play();
     }
 
@@ -82,5 +87,10 @@ public class RocketSelection : MonoBehaviour
     public int GetCurrentIndex()
     {
         return currentIndex;
+    }
+
+    public void UpdateRocketSelectionUI()
+    {
+        rocketLock.SetActive(!player.CheckIfPlayerHasRocket());
     }
 }
