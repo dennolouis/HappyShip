@@ -3123,5 +3123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedCloud
       objectReference: {fileID: 0}
+    - target: {fileID: 9067984281875936098, guid: 91c1f38ce3b314d158ccbd7c414d05bc,
+        type: 3}
+      propertyPath: destroyEffectDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c1f38ce3b314d158ccbd7c414d05bc, type: 3}
