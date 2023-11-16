@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject muzzle;
+    [SerializeField] float muzzleDuration = 0.25f;
     [SerializeField] float shootDelay = 1f;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float aimAngle = 10f; // The auto-aim angle in degrees
@@ -16,6 +18,12 @@ public class Shooter : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        if(muzzle)
+        {
+            muzzle.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
@@ -28,10 +36,9 @@ public class Shooter : MonoBehaviour
         }
         else
         {
-             RayCastShooting();
+            RayCastShooting();
         }
     }
-
 
     void ShootProjectile(Vector3 direction)
     {
@@ -47,6 +54,28 @@ public class Shooter : MonoBehaviour
         rb.velocity = direction * projectileSpeed;
 
         Destroy(projectile, 3f);
+
+        // Check if a muzzle GameObject is set
+        if (muzzle != null)
+        {
+            // Enable the muzzle GameObject
+            muzzle.SetActive(true);
+
+            // Disable the muzzle after a specified duration
+            StartCoroutine(DisableMuzzleAfterDelay());
+        }
+    }
+
+    IEnumerator DisableMuzzleAfterDelay()
+    {
+        yield return new WaitForSeconds(muzzleDuration);
+
+        // Check if a muzzle GameObject is set
+        if (muzzle != null)
+        {
+            // Disable the muzzle GameObject
+            muzzle.SetActive(false);
+        }
     }
 
     void RayCastShooting()
@@ -83,7 +112,5 @@ public class Shooter : MonoBehaviour
                 Debug.DrawRay(ray.origin, ray.direction * 100f, Color.green, 0.1f);
             }
         }
-
     }
-
 }
