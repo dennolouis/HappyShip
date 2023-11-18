@@ -51,7 +51,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
         {
             bannerAd.LoadBanner();
         }
-        
+
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)

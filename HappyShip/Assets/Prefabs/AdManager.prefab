@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6204721356247829675}
   - component: {fileID: 6204721356247829677}
   - component: {fileID: 8407286854618523309}
+  - component: {fileID: 8915149905087165031}
   m_Layer: 0
   m_Name: AdManager
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   _testMode: 0
   rewardedAdsButton: {fileID: 6204721356247829677}
   bannerAd: {fileID: 8407286854618523309}
+  interstitialAd: {fileID: 8915149905087165031}
 --- !u!114 &6204721356247829677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,3 +86,17 @@ MonoBehaviour:
   _bannerPosition: 4
   _androidAdUnitId: Banner_Android
   _iOSAdUnitId: Banner_iOS
+--- !u!114 &8915149905087165031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204721356247829672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198d1d3dfc72647a9bf7243ac9642c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidAdUnitId: Interstitial_Android
+  _iOsAdUnitId: Interstitial_iOS

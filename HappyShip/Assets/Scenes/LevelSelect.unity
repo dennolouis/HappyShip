@@ -1770,7 +1770,7 @@ PrefabInstance:
         type: 3}
       propertyPath: interstitialAd
       value: 
-      objectReference: {fileID: 1158692070}
+      objectReference: {fileID: 0}
     - target: {fileID: 6204721356247829677, guid: e07b22a9b63be45a59f2a5846971992f,
         type: 3}
       propertyPath: m_Enabled
@@ -1955,26 +1955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca48b45ba16744e48012e91e535c32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1158692065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6204721356247829672, guid: e07b22a9b63be45a59f2a5846971992f,
-    type: 3}
-  m_PrefabInstance: {fileID: 914619631}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1158692070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158692065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198d1d3dfc72647a9bf7243ac9642c5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _androidAdUnitId: Interstitial_Android
-  _iOsAdUnitId: Interstitial_iOS
 --- !u!1 &1167226544
 GameObject:
   m_ObjectHideFlags: 0

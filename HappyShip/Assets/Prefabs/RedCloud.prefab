@@ -9554,7 +9554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   destoryEffect: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
-  destroyEffectDuration: 2
+  destroyEffectDuration: 1.2
 --- !u!1 &9067984281271118798
 GameObject:
   m_ObjectHideFlags: 0
