@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerData
 {
     [SerializeField] int rocketIndex;
+    [SerializeField] List<bool> rockets;
     [SerializeField] int totalCoins;
     [SerializeField] List<int> totalStarsList;
     int adCount;
@@ -17,6 +18,7 @@ public class PlayerData
         totalCoins = player.GetTotalCoins();
         totalStarsList = player.GetTotalStarList();
         adCount = player.GetAdCount();
+        rockets = player.GetRockets();
     }
 
     public int GetTotalCoins()
@@ -37,6 +39,11 @@ public class PlayerData
     public int GetAdCount()
     {
         return adCount;
+    }
+
+    public List<bool> GetRockets()
+    {
+        return rockets;
     }
 
 }

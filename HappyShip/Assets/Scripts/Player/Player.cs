@@ -128,7 +128,6 @@ public class Player : MonoBehaviour
         if(data == null)
         {
             Debug.LogError("Null Player data. Using default values");
-            //UseDefaultValues();
             return;
         }
 
@@ -136,6 +135,7 @@ public class Player : MonoBehaviour
         totalCoins = data.GetTotalCoins();
         totalStarsList = data.GetTotalStarList();
         adCount = data.GetAdCount();
+        rockets = data.GetRockets();
 
     }
 
@@ -163,6 +163,11 @@ public class Player : MonoBehaviour
             FindObjectOfType<CoinUI>().UpdateUI();
         }
         
+    }
+
+    public List<bool> GetRockets()
+    {
+        return rockets;
     }
 
 

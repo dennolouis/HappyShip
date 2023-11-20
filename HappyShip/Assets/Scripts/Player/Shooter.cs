@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
@@ -8,8 +7,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject muzzle;
     [SerializeField] float muzzleDuration = 0.25f;
     [SerializeField] float shootDelay = 1f;
-    [SerializeField] float projectileSpeed = 10f;
-    [SerializeField] float aimAngle = 10f; // The auto-aim angle in degrees
+    [SerializeField] float projectileSpeed = 60f;
+    [SerializeField] float aimAngle = 30f; // The auto-aim angle in degrees
 
     float timeSinceLastShot = 0f;
 
@@ -19,11 +18,10 @@ public class Shooter : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        if(muzzle)
+        if (muzzle)
         {
             muzzle.SetActive(false);
         }
-
     }
 
     // Update is called once per frame
@@ -36,11 +34,23 @@ public class Shooter : MonoBehaviour
         }
         else
         {
-            RayCastShooting();
+            StartCoroutine(ShootProjectilesWithDelay());
+            timeSinceLastShot = 0f;
         }
     }
 
-    void ShootProjectile(Vector3 direction)
+    IEnumerator ShootProjectilesWithDelay()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            ShootProjectile();
+            yield return new WaitForSeconds(0.05f); // Adjust the delay between shots
+        }
+
+        //timeSinceLastShot = 0f; // Reset the timer after shooting three projectiles
+    }
+
+    void ShootProjectile()
     {
         audioSource.Play();
 
@@ -50,8 +60,8 @@ public class Shooter : MonoBehaviour
         // Add a rigidbody component to the projectile
         Rigidbody rb = projectile.AddComponent<Rigidbody>();
 
-        // Apply a force to the projectile in the specified direction
-        rb.velocity = direction * projectileSpeed;
+        // Apply a force to the projectile in the forward direction
+        rb.velocity = transform.forward * projectileSpeed;
 
         Destroy(projectile, 3f);
 
@@ -77,41 +87,4 @@ public class Shooter : MonoBehaviour
             muzzle.SetActive(false);
         }
     }
-
-    void RayCastShooting()
-    {
-        // Perform a raycast sweep in the specified angle range
-        for (float angle = -aimAngle; angle <= aimAngle; angle += 5f) // You can adjust the angle increment
-        {
-            Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
-            Vector3 direction = rotation * transform.forward;
-
-            // Cast a ray from this gameObject's position
-            Ray ray = new Ray(transform.position, direction);
-
-            // Check if the ray hits a gameObject with a Health script attached
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo))
-            {
-                Health healthScript = hitInfo.collider.gameObject.GetComponent<Health>();
-                if (healthScript != null)
-                {
-                    // Visualize the raycast
-                    Debug.DrawRay(ray.origin, ray.direction * hitInfo.distance, Color.red, 0.1f);
-                    print("hii");
-
-                    // Shoot the projectile
-                    ShootProjectile(direction);
-                    timeSinceLastShot = 0f;
-                    break; // Stop the loop after the first valid target is found
-                }
-            }
-            else
-            {
-                // Visualize the raycast
-                Debug.DrawRay(ray.origin, ray.direction * 100f, Color.green, 0.1f);
-            }
-        }
-    }
-
 }
