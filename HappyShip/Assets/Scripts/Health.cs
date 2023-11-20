@@ -16,17 +16,21 @@ public class Health : MonoBehaviour
         if(health <= 0)
         {
             ShowDestoryEffect();
-            Destroy(gameObject);
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Projectile")
+        switch (collision.gameObject.tag)
         {
-            GetHit();
-            collision.gameObject.GetComponent<Projectile>().ShowHitEffect();
-            Destroy(collision.gameObject);
+            case "Projectile":
+                GetHit();
+                collision.gameObject.GetComponent<Projectile>().ShowHitEffect();
+                Destroy(collision.gameObject);
+                break;
+            case "Player":
+                ShowDestoryEffect();
+                break;
         }
     }
 
@@ -38,6 +42,7 @@ public class Health : MonoBehaviour
             Destroy(effect, destroyEffectDuration);
         }
 
+        Destroy(gameObject);
     }
 
 }
