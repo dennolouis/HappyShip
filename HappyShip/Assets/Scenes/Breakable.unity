@@ -2194,6 +2194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6477450470311925171, guid: cbc15a10994fe4402977404c8afb9361,
         type: 3}
+      propertyPath: lives
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477450470311925171, guid: cbc15a10994fe4402977404c8afb9361,
+        type: 3}
       propertyPath: rocketIndex
       value: 0
       objectReference: {fileID: 0}
@@ -2331,11 +2336,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1714480898}
-    - target: {fileID: 7814601680677526849, guid: fee6c51ad756d4494a57201565690b1d,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitToMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 7814601680870400059, guid: fee6c51ad756d4494a57201565690b1d,
         type: 3}
       propertyPath: onTapEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
