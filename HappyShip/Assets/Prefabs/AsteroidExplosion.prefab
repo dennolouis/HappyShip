@@ -14159,7 +14159,7 @@ GameObject:
   - component: {fileID: 400006}
   - component: {fileID: 114000011007306418}
   m_Layer: 0
-  m_Name: Explosion4
+  m_Name: AsteroidExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
