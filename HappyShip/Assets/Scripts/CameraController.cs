@@ -25,6 +25,11 @@ public class CameraController : MonoBehaviour
             Debug.LogError("No Cinemachine virtual camera found in the scene!");
             return;
         }
+        if(targetObject == null)
+        {
+            Debug.LogError("Target is null");
+            return;
+        }
 
         // set the virtual camera's follow and look at targets to the target object
         virtualCamera.Follow = targetObject.transform;
