@@ -93,6 +93,7 @@ public class CollisionHandler : MonoBehaviour
         isTransitioning = true;
         Destroy(GetComponent<Movement>());
         Destroy(GetComponent<Collider>());
+        Destroy(GetComponent<ItemCollector>());
 
         audioSource.Stop();
         audioSource.PlayOneShot(crash);
