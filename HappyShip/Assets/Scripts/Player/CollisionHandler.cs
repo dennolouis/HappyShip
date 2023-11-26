@@ -56,6 +56,9 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        Collectable collectable = other.gameObject.GetComponent<Collectable>();
+
         switch (other.gameObject.tag)
         {
             case "Player":
@@ -65,12 +68,18 @@ public class CollisionHandler : MonoBehaviour
 
             case "Heart":
                 player.UpdateLives(1);
-                Destroy(other.gameObject);
+
+                if (collectable) { collectable.SpawnEffect(); }
+                else { Destroy(other.gameObject); }
+
                 break;
 
             case "Star":
                 player.CollectStar();
-                Destroy(other.gameObject);
+
+                if (collectable) { collectable.SpawnEffect(); }
+                else { Destroy(other.gameObject); }
+                
                 break;
 
             case "Coin":
