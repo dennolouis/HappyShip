@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ad8b1b124104f37b6ceed88981875b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 8702827721257523123, guid: 373fa331a38e14a4383da1a29613c3a7,
+  ballPrefab: {fileID: 947250871755532473, guid: 473d079eb020ad24184a63656bf54144,
     type: 3}
   spawnPoint: {fileID: 4006990665062368859}
   ballSpeed: 35
