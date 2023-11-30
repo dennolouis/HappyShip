@@ -34,4 +34,9 @@ public class LevelChanger : MonoBehaviour
         return SceneManager.GetActiveScene().buildIndex;
     }
 
+    public void GoHome()
+    {
+        FadeToLevel(0);
+    }
+
 }

@@ -140,7 +140,7 @@ public class CollisionHandler : MonoBehaviour
 
         successParticle.Play();
 
-        Invoke("LoadNextLevel", levelLoadDelay);
+        Invoke("GoHome", levelLoadDelay);
     }
     public void ReloadLevel()
     {
@@ -158,5 +158,11 @@ public class CollisionHandler : MonoBehaviour
             nextLevel = 0;
         }
         SceneManager.LoadScene(nextLevel);
+
+    }
+
+    void GoHome()
+    {
+        FindObjectOfType<LevelChanger>().GoHome();
     }
 }
