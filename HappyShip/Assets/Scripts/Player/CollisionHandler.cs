@@ -149,18 +149,6 @@ public class CollisionHandler : MonoBehaviour
         SceneManager.LoadScene(currentIndex);
     }
 
-    void LoadNextLevel() //TODO Move to level changer
-    {
-        int currentIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextLevel = currentIndex + 1;
-        if(nextLevel == SceneManager.sceneCountInBuildSettings)
-        {
-            nextLevel = 0;
-        }
-        SceneManager.LoadScene(nextLevel);
-
-    }
-
     void GoHome()
     {
         FindObjectOfType<LevelChanger>().GoHome();

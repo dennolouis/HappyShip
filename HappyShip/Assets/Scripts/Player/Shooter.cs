@@ -19,11 +19,10 @@ public class Shooter : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        if(muzzle)
+        if (muzzle)
         {
             muzzle.SetActive(false);
         }
-
     }
 
     // Update is called once per frame
@@ -59,8 +58,6 @@ public class Shooter : MonoBehaviour
             yield return new WaitForSeconds(0.05f); // Adjust the delay between shots
         }
 
-        
-
         // Check if a muzzle GameObject is set
         if (muzzle != null)
         {
@@ -89,7 +86,7 @@ public class Shooter : MonoBehaviour
         // Perform a raycast sweep in the specified angle range
         for (float angle = -aimAngle; angle <= aimAngle; angle += 5f) // You can adjust the angle increment
         {
-            Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+            Quaternion rotation = Quaternion.Euler(0f, angle, 0f);
             Vector3 direction = rotation * transform.forward;
 
             // Cast a ray from this gameObject's position
@@ -106,8 +103,11 @@ public class Shooter : MonoBehaviour
                     Debug.DrawRay(ray.origin, ray.direction * hitInfo.distance, Color.red, 0.1f);
                     print("hii");
 
-                    // Shoot the projectile
-                    StartCoroutine(ShootProjectile(direction));
+                    // Shoot the projectile at the location of the hit gameObject
+                    Vector3 targetPosition = hitInfo.collider.gameObject.transform.position;
+                    Vector3 shootDirection = (targetPosition - transform.position).normalized;
+                    StartCoroutine(ShootProjectile(shootDirection));
+
                     timeSinceLastShot = 0f;
                     break; // Stop the loop after the first valid target is found
                 }

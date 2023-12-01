@@ -1080,6 +1080,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShip
       objectReference: {fileID: 0}
+    - target: {fileID: 6361817400258866835, guid: f0e5e7383e00f47a3a7396b8547e4b74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6361817400258866844, guid: f0e5e7383e00f47a3a7396b8547e4b74,
         type: 3}
       propertyPath: m_RootOrder

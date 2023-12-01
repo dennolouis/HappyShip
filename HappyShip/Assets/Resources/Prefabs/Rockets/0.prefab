@@ -455,6 +455,7 @@ MonoBehaviour:
   shootDelay: 1
   projectileSpeed: 60
   aimAngle: 30
+  triggerRadius: 10
 --- !u!82 &8218471577883687858
 AudioSource:
   m_ObjectHideFlags: 0
