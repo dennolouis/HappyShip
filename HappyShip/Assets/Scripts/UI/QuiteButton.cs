@@ -10,9 +10,21 @@ public class QuiteButton : MonoBehaviour
     {
         LevelChanger levelChanger = FindObjectOfType<LevelChanger>();
 
+        SavePlayerCollectedCoins();
         if(levelChanger != null)
         {
             levelChanger.FadeToLevel(0);
+        }
+    }
+
+    void SavePlayerCollectedCoins()
+    {
+        Player player = FindObjectOfType<Player>();
+
+        if(player)
+        {
+            player.ResetCollectedStars();
+            player.Save();
         }
     }
 

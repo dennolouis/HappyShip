@@ -170,6 +170,9 @@ public class Player : MonoBehaviour
         return rockets;
     }
 
-
+    public void ResetCollectedStars()
+    {
+        collectedStars = 0;
+    }
 
 }
