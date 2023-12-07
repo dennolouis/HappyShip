@@ -103,6 +103,10 @@ public class Player : MonoBehaviour
         SaveStarLogic();
 
         totalCoins += collectedCoins;
+
+        if (totalCoins > 3000)
+            totalCoins = 3000;
+
         SaveSystem.SavePlayer(this);
 
     }
