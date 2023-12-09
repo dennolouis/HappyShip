@@ -155,6 +155,7 @@ public class Player : MonoBehaviour
 
     public bool CheckIfPlayerHasRocket()
     {
+        print("rocket index is " + rocketIndex.ToString());
         return rockets[rocketIndex];
     }
 
