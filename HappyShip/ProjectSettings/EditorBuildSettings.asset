@@ -24,11 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Void.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
   - enabled: 1
-    path: Assets/Scenes/Breakable.unity
-    guid: 5c5587d3f129a4c8eba564a483aebac1
+    path: Assets/Scenes/Clarence.unity
+    guid: 52bdc166b1d7f41ceb7e3bbee4302a55
   - enabled: 1
     path: Assets/Scenes/Portal.unity
     guid: 17fa9a8f5c68b4f04b0261f6598df20b
+  - enabled: 1
+    path: Assets/Scenes/Breakable.unity
+    guid: 5c5587d3f129a4c8eba564a483aebac1
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2523e72ca9a6e414ebe3bdfd74361357,
       type: 2}

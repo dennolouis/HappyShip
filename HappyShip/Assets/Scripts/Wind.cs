@@ -5,19 +5,35 @@ public class Wind : MonoBehaviour
     // Adjust this value to control the strength of the upward force
     [SerializeField] float force = 50f;
 
-    float y;
+    //float y;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    y = GetComponent<Renderer>().material.mainTextureOffset.y;
+    //}
+    void Start()
     {
-        y = GetComponent<Renderer>().material.mainTextureOffset.y;
+        // Get the MeshRenderer component attached to this GameObject
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+
+        // Check if the MeshRenderer component exists
+        if (meshRenderer != null)
+        {
+            // Disable the MeshRenderer component
+            meshRenderer.enabled = false;
+        }
+        else
+        {
+            Debug.LogError("MeshRenderer component not found on this GameObject.");
+        }
     }
 
 
-    private void Update()
-    {
-        y += force / 40 * Time.deltaTime;
-        GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, y));
-    }
+    //private void Update()
+    //{
+    //    y += force / 40 * Time.deltaTime;
+    //    GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(0, y));
+    //}
 
     private void OnTriggerStay(Collider other)
     {
