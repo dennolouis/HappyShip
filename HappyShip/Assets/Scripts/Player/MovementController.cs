@@ -9,7 +9,7 @@ public class MovementController : MonoBehaviour
     {
         movement = move;
     }
-
+   
     // Callback method for when the "left" button is clicked
     public void OnLeftButtonClicked()
     {

@@ -21,11 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Dark.unity
     guid: d9d8eae8eae764360a02b2895ad3e706
   - enabled: 1
-    path: Assets/Scenes/Void.unity
-    guid: c850ee8c3b14cc8459e7e186857cf567
-  - enabled: 1
     path: Assets/Scenes/Clarence.unity
     guid: 52bdc166b1d7f41ceb7e3bbee4302a55
+  - enabled: 1
+    path: Assets/Scenes/Void.unity
+    guid: c850ee8c3b14cc8459e7e186857cf567
   - enabled: 1
     path: Assets/Scenes/Portal.unity
     guid: 17fa9a8f5c68b4f04b0261f6598df20b

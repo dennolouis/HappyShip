@@ -14,4 +14,10 @@ public class Projectile : MonoBehaviour
             Destroy(effect, 0.5f);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        ShowHitEffect();
+        Destroy(gameObject, 0.5f);
+    }
 }

@@ -10,9 +10,13 @@ public class CheckPointSystem : MonoBehaviour
 
     Player player;
 
+    MovementController movementContoller;
+
     void Start()
     {
         player = FindObjectOfType<Player>();
+        movementContoller = FindObjectOfType<MovementController>();
+
         string rocketPrefabName = player.GetRocketIndex().ToString();
 
         SetRocket(rocketPrefabName);
@@ -22,7 +26,8 @@ public class CheckPointSystem : MonoBehaviour
 
     public void SpawnRocket()
     {
-        Instantiate(rocket, activeCheckPoint.position, activeCheckPoint.rotation);
+        GameObject playerRocket = Instantiate(rocket, activeCheckPoint.position, activeCheckPoint.rotation);
+        movementContoller.SetMovement(playerRocket.GetComponent<Movement>());
     }
 
     public void SetCheckPoint(Transform checkPoint)

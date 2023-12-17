@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 6942270574780219263}
   - component: {fileID: 8219179712119215311}
   - component: {fileID: 8236083890706181016}
+  - component: {fileID: 8061859449567672788}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: Untagged
@@ -244,6 +245,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8061859449567672788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7235168237511774362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f965f094ea20142ac821d82821259489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  destoryEffect: {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
+  destroyEffectDuration: 2
 --- !u!1001 &1781835504555131093
 PrefabInstance:
   m_ObjectHideFlags: 0

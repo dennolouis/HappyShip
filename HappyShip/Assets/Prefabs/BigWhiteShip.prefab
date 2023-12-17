@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   destoryEffect: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
-  destroyEffectDuration: 1
+  destroyEffectDuration: 2
 --- !u!114 &2435847471458725782
 MonoBehaviour:
   m_ObjectHideFlags: 0
