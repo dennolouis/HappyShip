@@ -93,10 +93,4 @@ public class RocketSelection : MonoBehaviour
     {
         rocketLock.SetActive(!player.CheckIfPlayerHasRocket());
     }
-
-    public void BuyRocket()
-    {
-        FindObjectOfType<Player>().BuyRocket();
-        UpdateRocketSelectionUI();
-    }
 }

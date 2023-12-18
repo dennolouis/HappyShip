@@ -159,15 +159,16 @@ public class Player : MonoBehaviour
         return rockets[rocketIndex];
     }
 
-    public void BuyRocket()
+    public bool BuyRocket()
     {
         if(totalCoins >= 200)
         {
             rockets[rocketIndex] = true;
             totalCoins -= 200;
             FindObjectOfType<CoinUI>().UpdateUI();
+            return true;
         }
-        
+        return false;
     }
 
     public List<bool> GetRockets()
