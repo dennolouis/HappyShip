@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     {
         gameUI = FindAnyObjectByType<GameUI>();
         soundManager = FindAnyObjectByType<SoundManager>();
+        if (rocketIndex == 2)
+            UpdateLives(2);
     }
 
     public int GetRocketIndex()
