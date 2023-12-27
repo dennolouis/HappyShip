@@ -9,6 +9,7 @@ public class Cannon : MonoBehaviour
     [SerializeField] Transform spawnPoint;
     [SerializeField] float ballSpeed = 10f;
     [SerializeField] float shootInterval = 3f;
+    [SerializeField] float ballLifeStime = 7f;
     float timeSinceLastShot = 0f;
     GameObject target;
     bool inRange = false;
@@ -44,7 +45,7 @@ public class Cannon : MonoBehaviour
         Rigidbody ballRb = ball.GetComponent<Rigidbody>();
         ballRb.AddForce(transform.forward * ballSpeed, ForceMode.Impulse);
 
-        Destroy(ball, 7f);
+        Destroy(ball, ballLifeStime);
     }
 
     void HandleShooting()

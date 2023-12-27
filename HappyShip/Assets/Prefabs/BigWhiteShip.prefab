@@ -221,3 +221,4 @@ MonoBehaviour:
   spawnPoint: {fileID: 4502813553568748617}
   ballSpeed: 20
   shootInterval: 3
+  ballLifeStime: 120
