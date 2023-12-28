@@ -10095,36 +10095,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3972446079334877457, guid: 289f76ee0844147d9bed2ad10c2f030b,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3972446079334877459, guid: 289f76ee0844147d9bed2ad10c2f030b,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3972446079334877461, guid: 289f76ee0844147d9bed2ad10c2f030b,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3972446079334877463, guid: 289f76ee0844147d9bed2ad10c2f030b,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3972446079334877465, guid: 289f76ee0844147d9bed2ad10c2f030b,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3972446079334877467, guid: 289f76ee0844147d9bed2ad10c2f030b,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3972446079349696991, guid: 289f76ee0844147d9bed2ad10c2f030b,
         type: 3}
       propertyPath: m_Name
