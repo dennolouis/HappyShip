@@ -6,18 +6,33 @@ public class Pipe : MonoBehaviour
 {
 
     [SerializeField] GameObject missilePrefab;
-    [SerializeField] List<Transform > spawnPoints;
+    [SerializeField] List<Transform> spawnPoints;
     [SerializeField] float ballSpeed = 10f;
     [SerializeField] float shootInterval = 3f;
+    [SerializeField] GameObject effect;
     float timeSinceLastShot = 0f;
     GameObject target;
     bool inRange = false;
+    bool effectActive = false;
+
     void Update()
     {
         if (inRange && target)
         {
-            //transform.LookAt(target.transform);
             HandleShooting();
+        }
+
+        if (effectActive)
+        {
+            // Check if 'effect' is not null before attempting to access its properties
+            if (effect != null)
+            {
+                StartCoroutine(DeactivateEffectAfterDelay(1.2f));
+            }
+            else
+            {
+                Debug.LogWarning("Effect is null.");
+            }
         }
     }
 
@@ -40,7 +55,10 @@ public class Pipe : MonoBehaviour
 
     void Shoot()
     {
-        foreach(Transform spawnPoint in spawnPoints)
+        effect.SetActive(true);
+        effectActive = true;
+
+        foreach (Transform spawnPoint in spawnPoints)
         {
             GameObject missile = Instantiate(missilePrefab, spawnPoint.position, transform.rotation);
             Rigidbody missileRb = missile.GetComponent<Rigidbody>();
@@ -48,7 +66,6 @@ public class Pipe : MonoBehaviour
 
             Destroy(missile, 7f);
         }
-        
     }
 
     void HandleShooting()
@@ -58,6 +75,22 @@ public class Pipe : MonoBehaviour
         {
             Shoot();
             timeSinceLastShot = 0f;
+        }
+    }
+
+    IEnumerator DeactivateEffectAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Check if 'effect' is not null before attempting to access its properties
+        if (effect != null)
+        {
+            effect.SetActive(false);
+            effectActive = false;
+        }
+        else
+        {
+            Debug.LogWarning("Effect is null.");
         }
     }
 }
