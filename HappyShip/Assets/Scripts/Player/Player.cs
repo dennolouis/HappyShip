@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
         soundManager = FindAnyObjectByType<SoundManager>();
         if (rocketIndex == 2)
             UpdateLives(2);
+        if(rockets != null)
+            rockets[0] = true;
     }
 
     public int GetRocketIndex()

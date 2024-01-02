@@ -33,6 +33,8 @@ public class RocketSelection : MonoBehaviour
         // Add click event listeners
         nextButton.onClick.AddListener(Next);
         prevButton.onClick.AddListener(Previous);
+
+        UpdateRocketSelectionUI();
     }
 
     void OnDestroy()
