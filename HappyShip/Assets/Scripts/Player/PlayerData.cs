@@ -10,6 +10,7 @@ public class PlayerData
     [SerializeField] int totalCoins;
     [SerializeField] List<int> totalStarsList;
     int adCount;
+    int maxLives;
 
 
     public PlayerData(Player player)
@@ -19,6 +20,7 @@ public class PlayerData
         totalStarsList = player.GetTotalStarList();
         adCount = player.GetAdCount();
         rockets = player.GetRockets();
+        maxLives = player.GetMaxLives();
     }
 
     public int GetTotalCoins()
@@ -46,4 +48,8 @@ public class PlayerData
         return rockets;
     }
 
+    public int GetMaxLives()
+    {
+        return maxLives;
+    }
 }

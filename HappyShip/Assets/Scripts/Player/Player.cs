@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] int totalCoins;
     [SerializeField] List<int> totalStarsList;
 
-
-    [SerializeField] int lives = 5;
+    int maxLives = 3;
+    [SerializeField] int lives = 3;
 
     [SerializeField] int adCount;
 
@@ -70,6 +70,11 @@ public class Player : MonoBehaviour
     {
         collectedCoins++;
         soundManager.PlayCollectCoinSound();
+    }
+
+    public void PayWithCoins(int x)
+    {
+        totalCoins -= x;
     }
 
     public void CollectStar()
@@ -144,7 +149,9 @@ public class Player : MonoBehaviour
         totalStarsList = data.GetTotalStarList();
         adCount = data.GetAdCount();
         rockets = data.GetRockets();
+        maxLives = data.GetMaxLives();
 
+        lives = maxLives;
     }
 
     public int GetAdCount()
@@ -183,6 +190,16 @@ public class Player : MonoBehaviour
     public void ResetCollectedStars()
     {
         collectedStars = 0;
+    }
+
+    public int GetMaxLives()
+    {
+        return maxLives;
+    }
+
+    public void UpdateMaxLives()
+    {
+        maxLives++;
     }
 
 }
