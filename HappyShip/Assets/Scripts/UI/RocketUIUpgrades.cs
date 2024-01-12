@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RocketUIUpgrades : MonoBehaviour
@@ -8,6 +9,9 @@ public class RocketUIUpgrades : MonoBehaviour
     [SerializeField] GameObject rocketSelectionController;
     [SerializeField] GameObject healthVisual;
     [SerializeField] GameObject buyHealthBtn;
+
+    [SerializeField] TMP_Text description;
+    [SerializeField] TMP_Text maxLives;
 
     GameObjectManager gameObjectManager;
     Player player;
@@ -22,6 +26,9 @@ public class RocketUIUpgrades : MonoBehaviour
         ShowRocketVisual();
 
         player = FindObjectOfType<Player>();
+
+        UpdateMaxLivesTMP();
+
     }
 
     public void ShowRocketVisual()
@@ -45,8 +52,23 @@ public class RocketUIUpgrades : MonoBehaviour
             player.PayWithCoins(50);
             player.UpdateMaxLives();
             FindObjectOfType<CoinUI>().UpdateUI();
+            UpdateMaxLivesTMP();
         }
     }
 
+    public void SetDescription(string description)
+    {
+        this.description.text = description;
+    }
+
+    void UpdateMaxLivesTMP()
+    {
+        int playerMaxLives = player.GetMaxLives();
+
+        maxLives.text = playerMaxLives.ToString();
+
+        if (playerMaxLives >= 7)
+            maxLives.text += " MAX";
+    }
 }
 
