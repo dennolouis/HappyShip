@@ -77,7 +77,7 @@ public class AdMob : MonoBehaviour
         {
             DestroyBannerAd();
         }
-        bannerView = new BannerView(bannerId, AdSize.Banner, AdPosition.Bottom);
+        bannerView = new BannerView(bannerId, AdSize.Banner, AdPosition.TopRight);
     }
     void ListenToBannerEvents()
     {

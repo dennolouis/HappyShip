@@ -84,6 +84,7 @@ public class CollisionHandler : MonoBehaviour
 
             case "Coin":
                 player.CollectCoin();
+                if (player.GetRocketIndex() == 0) player.CollectCoin();
                 Destroy(other.gameObject);
                 break;
             case "Friendly":

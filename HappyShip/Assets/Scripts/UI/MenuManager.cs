@@ -21,12 +21,6 @@ public class MenuManager : MonoBehaviour
         //ShowMenu(currentMenuIndex); // Show the initial menu
     }
 
-    void Update()
-    {
-        // You can trigger menu changes based on user input or other events
-        // For example, you can call the SwitchToMenu function with the desired menu index.
-    }
-
     public void SwitchToMenu(int targetMenuIndex)
     {
         if (targetMenuIndex < 0 || targetMenuIndex >= menus.Length || targetMenuIndex == currentMenuIndex)

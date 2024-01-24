@@ -16,6 +16,12 @@ public class RocketSelection : MonoBehaviour
 
     Player player;
 
+    RocketUIUpgrades rocketUIUpgrades;
+
+    string[] rocketDescriptions = { "Collects double the coins",
+                                    "Shoots double the bullets",
+                                    "Starts off with double health"};
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -24,6 +30,7 @@ public class RocketSelection : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
+        rocketUIUpgrades = FindObjectOfType<RocketUIUpgrades>();
 
         currentIndex = player.GetRocketIndex();
 
@@ -64,10 +71,17 @@ public class RocketSelection : MonoBehaviour
         audioSource.Play();
     }
 
+    public void DisplayRocketDescription()
+    {
+        rocketUIUpgrades.SetDescription(rocketDescriptions[currentIndex]);
+    }
+
     private void EnableCurrentRocket()
     {
         rockets[currentIndex].SetActive(true);
         previousRocket = rockets[currentIndex];
+
+        DisplayRocketDescription();
     }
 
     private void DisablePreviousRocket()

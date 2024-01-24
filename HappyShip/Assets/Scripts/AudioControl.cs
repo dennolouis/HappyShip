@@ -9,7 +9,7 @@ public class AudioControl : MonoBehaviour
 
     void Start()
     {
-
+        mutedButton.SetActive(AudioListener.pause);
     }
 
     public void Mute()

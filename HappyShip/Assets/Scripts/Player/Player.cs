@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         gameUI = FindAnyObjectByType<GameUI>();
         soundManager = FindAnyObjectByType<SoundManager>();
         if (rocketIndex == 2)
-            UpdateLives(2);
+            lives = maxLives * 2;
         if(rockets != null)
             rockets[0] = true;
     }
@@ -55,7 +55,8 @@ public class Player : MonoBehaviour
     public void UpdateLives(int x)
     {
         lives += x;
-        gameUI.SetHearts(lives);
+        if(gameUI)
+            gameUI.SetHearts(lives);
 
         if(x > 0)
             soundManager.PlayCollectHeartSound(); //play if increasing health
