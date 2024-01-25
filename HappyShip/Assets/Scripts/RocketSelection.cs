@@ -109,4 +109,16 @@ public class RocketSelection : MonoBehaviour
     {
         rocketLock.SetActive(!player.CheckIfPlayerHasRocket());
     }
+
+    public void EnforceRocketLock()
+    {
+        if (player.CheckIfPlayerHasRocket()) return;
+
+        DisablePreviousRocket();
+        currentIndex = 0;
+        player.SetRocketIndex(currentIndex);
+        EnableCurrentRocket();
+        UpdateRocketSelectionUI();
+        audioSource.Play();
+    }
 }
