@@ -6251,7 +6251,7 @@ MonoBehaviour:
   - {fileID: 1357205890}
   - {fileID: 131360261}
   - {fileID: 1037201915}
-  slideSpeed: 0.5
+  slideSpeed: 0.25
 --- !u!1 &1610078058
 GameObject:
   m_ObjectHideFlags: 0
