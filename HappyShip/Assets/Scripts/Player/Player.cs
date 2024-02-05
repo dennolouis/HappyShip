@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     int maxLives = 3;
     [SerializeField] int lives = 3;
 
+
+    [SerializeField] int ammo;
+
     [SerializeField] int adCount;
 
     int collectedCoins;
@@ -151,6 +154,7 @@ public class Player : MonoBehaviour
         adCount = data.GetAdCount();
         rockets = data.GetRockets();
         maxLives = data.GetMaxLives();
+        ammo = data.GetAmmo();
 
         lives = maxLives;
     }
@@ -201,6 +205,24 @@ public class Player : MonoBehaviour
     public void UpdateMaxLives()
     {
         maxLives++;
+    }
+
+    public int GetAmmo()
+    {
+        return ammo > 0 ? ammo : 1;
+    }
+
+    public void SetAmmo(int x)
+    {
+        ammo = x > 0? x: 1;
+    }
+
+    public void UpdateAmmo()
+    {
+        if(ammo < 3)
+        {
+            ammo++;
+        }
     }
 
 }

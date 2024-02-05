@@ -11,9 +11,13 @@ public class RocketUIUpgrades : MonoBehaviour
     [SerializeField] GameObject healthVisual;
     [SerializeField] GameObject buyHealthBtn;
     [SerializeField] Slider healthSlider;
+    [SerializeField] GameObject ammoVisual;
 
     [SerializeField] TMP_Text description;
     [SerializeField] TMP_Text maxLives;
+    [SerializeField] TMP_Text ammoText;
+
+    [SerializeField] GameObject buyAmmoBtn;
 
     GameObjectManager gameObjectManager;
     Player player;
@@ -32,6 +36,7 @@ public class RocketUIUpgrades : MonoBehaviour
         player = FindObjectOfType<Player>();
 
         UpdateMaxLivesTMP();
+        UpdateAmmoTMP();
 
     }
 
@@ -49,6 +54,11 @@ public class RocketUIUpgrades : MonoBehaviour
         buyHealthBtn.SetActive(true);
     }
 
+    public void ShowAmmoVisual()
+    {
+        gameObjectManager.ShowGameObject(ammoVisual);
+    }
+
     public void BuyHealth()
     {
         if(player.GetTotalCoins() > 50)
@@ -60,9 +70,31 @@ public class RocketUIUpgrades : MonoBehaviour
         }
     }
 
+    public void BuyAmmo()
+    {
+        if (player.GetTotalCoins() > 75)
+        {
+            player.PayWithCoins(75);
+            player.UpdateAmmo();
+            FindObjectOfType<CoinUI>().UpdateUI();
+            UpdateAmmoTMP();
+        }
+    }
+
     public void SetDescription(string description)
     {
         this.description.text = description;
+    }
+
+    public void UpdateAmmoTMP()
+    {
+        int ammo = player.GetAmmo();
+        ammoText.text = ammo.ToString();
+
+        if(ammo >= 3)
+        {
+            buyAmmoBtn.GetComponent<Button>().interactable = false;
+        }
     }
 
     void UpdateMaxLivesTMP()
@@ -80,6 +112,7 @@ public class RocketUIUpgrades : MonoBehaviour
         UpdateHealthSlider();
           
     }
+
 
     void UpdateHealthSlider()
     {

@@ -15,6 +15,8 @@ public class Shooter : MonoBehaviour
 
     AudioSource audioSource;
 
+    int ammo;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -22,6 +24,12 @@ public class Shooter : MonoBehaviour
         if (muzzle)
         {
             muzzle.SetActive(false);
+        }
+
+        ammo = FindObjectOfType<Player>().GetAmmo();
+        if(ammo == 0)
+        {
+            ammo = 1;
         }
     }
 
@@ -43,7 +51,7 @@ public class Shooter : MonoBehaviour
     {
         audioSource.Play();
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < ammo; i++)
         {
             // Instantiate the projectile prefab
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
