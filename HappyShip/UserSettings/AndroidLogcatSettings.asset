@@ -1,13 +1,20 @@
 {
     "m_SelectedDeviceId": "a1c407df",
     "m_SelectedProcess": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "a1c407df",
+        "name": "com.DefaultCompany.HappyShip",
+        "processId": 20170,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownProcessesForSerialization": [],
+    "m_KnownProcessesForSerialization": [
+        {
+            "deviceId": "a1c407df",
+            "name": "com.DefaultCompany.HappyShip",
+            "processId": 20170,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
