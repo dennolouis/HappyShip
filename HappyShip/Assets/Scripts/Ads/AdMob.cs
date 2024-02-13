@@ -8,7 +8,7 @@ public class AdMob : MonoBehaviour
 {
     public TextMeshProUGUI totalCoinsTxt;
 
-
+    [SerializeField] bool useTestAds;
 
 #if UNITY_ANDROID
     public string appId = "ca-app-pub-6522002570333002~1651338455";
@@ -31,6 +31,13 @@ public class AdMob : MonoBehaviour
     RewardedAd rewardedAd;
     //NativeAd nativeAd;
 
+    private void Awake()
+    {
+        if (useTestAds)
+        {
+            UseTestAds();
+        }
+    }
 
     private void Start()
     {
@@ -46,6 +53,25 @@ public class AdMob : MonoBehaviour
         LoadInterstitialAd();
         LoadRewardedAd();
         ShouldShowAd();
+    }
+
+    void UseTestAds()
+    {
+#if UNITY_ANDROID
+    //appId = "ca-app-pub-3940256099942544/6300978111";
+    bannerId = "ca-app-pub-3940256099942544/6300978111";
+    interId = "ca-app-pub-3940256099942544/1033173712";
+    rewardedId = "ca-app-pub-3940256099942544/5224354917";
+    nativeId = "ca-app-pub-3940256099942544/2247696110";
+
+#elif UNITY_IPHONE
+        //appId = "ca-app-pub-3940256099942544/2934735716";
+        bannerId = "ca-app-pub-3940256099942544/2934735716";
+        interId = "ca-app-pub-3940256099942544/4411468910";
+        rewardedId = "ca-app-pub-3940256099942544/1712485313";
+        nativeId = "ca-app-pub-3940256099942544/3986624511";
+
+#endif
     }
 
     #region Banner

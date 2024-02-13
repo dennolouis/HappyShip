@@ -61,7 +61,7 @@ public class RocketUIUpgrades : MonoBehaviour
 
     public void BuyHealth()
     {
-        if(player.GetTotalCoins() > 50)
+        if(player.GetTotalCoins() >= 50)
         {
             player.PayWithCoins(50);
             player.UpdateMaxLives();

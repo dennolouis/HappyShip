@@ -3,7 +3,7 @@
     "m_SelectedProcess": {
         "deviceId": "a1c407df",
         "name": "com.DefaultCompany.HappyShip",
-        "processId": 20170,
+        "processId": 17858,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,12 @@
             "deviceId": "a1c407df",
             "name": "com.DefaultCompany.HappyShip",
             "processId": 20170,
+            "exited": false
+        },
+        {
+            "deviceId": "a1c407df",
+            "name": "com.DefaultCompany.HappyShip",
+            "processId": 17858,
             "exited": false
         }
     ],
