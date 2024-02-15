@@ -21,6 +21,15 @@ public class LevelChanger : MonoBehaviour
 
     public void ReloadLevel()
     {
+        //Save the amoount of coins collected before restarting level
+        Player player = FindObjectOfType<Player>();
+
+        if (player)
+        {
+            player.ResetCollectedStars();
+            player.Save();
+        }
+
         FadeToLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
