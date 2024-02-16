@@ -1221,7 +1221,7 @@ GameObject:
   - component: {fileID: 318780886}
   - component: {fileID: 318780885}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btn place holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,7 +1326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 184.82143}
+  m_AnchoredPosition: {x: 280, y: -820}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &328361457
@@ -5022,6 +5022,11 @@ PrefabInstance:
       propertyPath: _showAdButton
       value: 
       objectReference: {fileID: 1528645115}
+    - target: {fileID: 7000174544017388659, guid: e07b22a9b63be45a59f2a5846971992f,
+        type: 3}
+      propertyPath: _showAdButton
+      value: 
+      objectReference: {fileID: 318780885}
     - target: {fileID: 8407286854618523309, guid: e07b22a9b63be45a59f2a5846971992f,
         type: 3}
       propertyPath: m_Enabled
