@@ -9,10 +9,11 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
     void Awake()
     {
-        // Get the Ad Unit ID for the current platform:
-        _adUnitId = (Application.platform != RuntimePlatform.IPhonePlayer)
-            ? _iOsAdUnitId
-            : _androidAdUnitId;
+#if UNITY_IOS
+        _adUnitId = _iOsAdUnitId;
+#elif UNITY_ANDROID
+        _adUnitId = _androidAdUnitId;
+#endif
     }
 
     private void Start()
