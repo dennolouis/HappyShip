@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: efd1c33efd2d58340b88804268e6833f, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7a8e39c00ee4e42ce80f4c18fca18596, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42892078, g: 0.5634415, b: 0.7108871, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031017559, g: 0.006184577, b: 0.014183034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -232,6 +232,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 328361458}
+  - {fileID: 1659619564}
+  - {fileID: 636833605}
   m_Father: {fileID: 799662460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3041,14 +3043,14 @@ RectTransform:
   m_GameObject: {fileID: 636833604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2712512, y: 0.27125126, z: 0.2712512}
+  m_LocalScale: {x: 0.45974776, y: 0.14492096, z: 0.27125117}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 799662460}
+  m_Father: {fileID: 13934048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.797852, y: 0}
+  m_AnchoredPosition: {x: 26.775974, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &636833606
@@ -4468,8 +4470,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1659619564}
-  - {fileID: 636833605}
   - {fileID: 13934048}
   - {fileID: 198221336}
   m_Father: {fileID: 1357205891}
@@ -5386,7 +5386,7 @@ MonoBehaviour:
   - {fileID: 652726912}
   - {fileID: 833296655}
   - {fileID: 2016821553}
-  neededStars: 0000000001000000020000000300000005000000080000000d0000001500000019000000
+  neededStars: 0000000001000000030000000500000007000000090000000b0000000d0000000f000000
   selectLevelSound: {fileID: 8300000, guid: c366adf0b7e294528a270a6cfbe4343c, type: 3}
   lockedLevelSound: {fileID: 8300000, guid: 32c08165a29054724b508ee121c5846f, type: 3}
 --- !u!114 &1026476761
@@ -7860,16 +7860,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659619563}
-  m_LocalRotation: {x: -0, y: -0, z: 0.3839086, w: 0.92337114}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25091323, y: 0.25091323, z: 0.25091323}
+  m_LocalScale: {x: 0.42527667, y: 0.134055, z: 0.25091323}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 799662460}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.152}
+  m_Father: {fileID: 13934048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.797791, y: 0}
+  m_AnchoredPosition: {x: -26.77595, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659619565
