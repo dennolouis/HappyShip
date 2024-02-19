@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     int collectedCoins;
     int collectedStars;
 
+    bool tempUnlimitedLives = false;
+    float unlimitedLivesTimer = 60;
+
     GameUI gameUI;
     SoundManager soundManager;
 
@@ -34,8 +37,16 @@ public class Player : MonoBehaviour
     {
         gameUI = FindAnyObjectByType<GameUI>();
         soundManager = FindAnyObjectByType<SoundManager>();
+
         if (rocketIndex == 2)
             lives = maxLives * 2;
+
+        if (rocketIndex == 3)
+        {
+            tempUnlimitedLives = true;
+            StartCoroutine(DisableUnlimitedLives());
+        }
+            
         if(rockets != null)
             rockets[0] = true;
     }
@@ -57,12 +68,17 @@ public class Player : MonoBehaviour
 
     public void UpdateLives(int x)
     {
+        if(x > 0)
+            soundManager.PlayCollectHeartSound(); //play if increasing health
+
+        if (tempUnlimitedLives)
+            return;
+
         lives += x;
         if(gameUI)
             gameUI.SetHearts(lives);
 
-        if(x > 0)
-            soundManager.PlayCollectHeartSound(); //play if increasing health
+        
     }
 
     public int GetLives()
@@ -225,4 +241,11 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    IEnumerator DisableUnlimitedLives()
+    {
+        yield return new WaitForSeconds(unlimitedLivesTimer);
+        tempUnlimitedLives = false;
+        print("no more unlimited");
+    }
 }

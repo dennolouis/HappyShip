@@ -13394,6 +13394,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169375261}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1171962117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 410
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033793147189940124, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUpContainerBlue (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 976b1b9edb1944357a5980558bb1d9bb, type: 3}
 --- !u!1 &1174678743
 GameObject:
   m_ObjectHideFlags: 0
@@ -15028,6 +15096,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375787133}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1385123500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -110
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487930975997788697, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033793147189940124, guid: 976b1b9edb1944357a5980558bb1d9bb,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUpContainerBlue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 976b1b9edb1944357a5980558bb1d9bb, type: 3}
 --- !u!1 &1388398863
 GameObject:
   m_ObjectHideFlags: 0
@@ -24042,3 +24178,5 @@ SceneRoots:
   - {fileID: 50670673}
   - {fileID: 906100023}
   - {fileID: 2140712482}
+  - {fileID: 1385123500}
+  - {fileID: 1171962117}

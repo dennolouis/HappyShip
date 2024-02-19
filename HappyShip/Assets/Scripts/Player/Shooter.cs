@@ -128,4 +128,18 @@ public class Shooter : MonoBehaviour
         }
     }
 
+    public void ModifyAmmo(int amount)
+    {
+        ammo += amount;
+    }
+
+    public void ResetAmmo()
+    {
+        ammo = FindObjectOfType<Player>().GetAmmo(); // Reset ammo to its original value
+        if (ammo == 0)
+        {
+            ammo = 1;
+        }
+    }
+
 }
