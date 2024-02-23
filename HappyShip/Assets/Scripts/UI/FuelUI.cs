@@ -46,4 +46,9 @@ public class FuelUI : MonoBehaviour
     {
         rocketMovement = movement;
     }
+
+    public void ResetCriticalSoundPlayed()
+    {
+        criticalSoundPlayed = false;
+    }
 }

@@ -60,7 +60,10 @@ MonoBehaviour:
   thrustForce: 6500
   rotationSpeed: 250
   engineThrust: {fileID: 8300000, guid: 72502053be3164a6c98a92338a7a2b36, type: 3}
+  outOfFuelClip: {fileID: 8300000, guid: 45129facdf9a45e4192b169f8958889e, type: 3}
   engineThrustParticles: {fileID: 2862616225033650761}
+  thrustDeduction: 3
+  thrustFuel: 100
 --- !u!54 &2667755815104151417
 Rigidbody:
   m_ObjectHideFlags: 0

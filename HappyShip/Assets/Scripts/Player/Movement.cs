@@ -16,13 +16,15 @@ public class Movement : MonoBehaviour
     bool left = false;
     bool right = false;
     bool outOfFuelSoundPlayed = false; // Flag to track if the out of fuel sound has been played
+    FuelUI fuelUI;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        fuelUI = FindObjectOfType<FuelUI>();
         FindObjectOfType<MovementController>().SetMovement(this);
-        FindObjectOfType<FuelUI>().SetMovementScript(this);
+        fuelUI.SetMovementScript(this);
     }
 
     void Update()
@@ -108,5 +110,11 @@ public class Movement : MonoBehaviour
     public float GetFuelPercentage()
     {
         return Mathf.Clamp01(thrustFuel / 100f);
+    }
+
+    public void ReFuel()
+    {
+        thrustFuel = 100f;
+        fuelUI.ResetCriticalSoundPlayed();
     }
 }

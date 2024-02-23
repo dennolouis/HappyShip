@@ -103,6 +103,11 @@ public class CollisionHandler : MonoBehaviour
                 if (collectable) { collectable.SpawnEffect(); }
                 else { Destroy(other.gameObject); }
                 break;
+            case "Fuel":
+                HandleFuelPowerUp(other.gameObject);
+                if (collectable) { collectable.SpawnEffect(); }
+                else { Destroy(other.gameObject); }
+                break;
         }
     }
 
@@ -192,6 +197,12 @@ public class CollisionHandler : MonoBehaviour
             StartCoroutine(ResetAmmoAfterDelay(shooter));
             Destroy(powerUpObject);
         }
+    }
+
+    void HandleFuelPowerUp(GameObject powerUpObject)
+    {
+        Movement movement = GetComponent<Movement>();
+        movement.ReFuel();
     }
 
 }
