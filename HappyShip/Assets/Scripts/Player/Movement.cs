@@ -1,39 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
     [SerializeField] float thrustForce = 100;
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] AudioClip engineThrust;
-
+    [SerializeField] AudioClip outOfFuelClip; // New audio clip for when fuel runs out
     [SerializeField] ParticleSystem engineThrustParticles;
-   
+    [SerializeField] float thrustDeduction = 3f;
+    [SerializeField] float thrustFuel = 100f;
+
     Rigidbody rb;
     AudioSource audioSource;
-
     bool thrust = false;
     bool left = false;
     bool right = false;
-    // Start is called before the first frame update
+    bool outOfFuelSoundPlayed = false; // Flag to track if the out of fuel sound has been played
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         FindObjectOfType<MovementController>().SetMovement(this);
+        FindObjectOfType<FuelUI>().SetMovementScript(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
         ProcessInput();
+
+        // Check if fuel has run out and play the out of fuel sound if it has
+        if (thrustFuel <= 0 && !outOfFuelSoundPlayed && outOfFuelClip != null)
+        {
+            audioSource.PlayOneShot(outOfFuelClip); // Play the out of fuel sound
+            outOfFuelSoundPlayed = true; // Set the flag to true so it won't play again
+        }
     }
 
     void ProcessInput()
     {
-        if(Input.GetKey(KeyCode.W) || thrust)
+        if (Input.GetKey(KeyCode.W) || thrust)
         {
             Thrust();
         }
@@ -46,8 +52,7 @@ public class Movement : MonoBehaviour
         {
             ApplyRotation(rotationSpeed);
         }
-
-        else if(Input.GetKey(KeyCode.D) || right)
+        else if (Input.GetKey(KeyCode.D) || right)
         {
             ApplyRotation(-rotationSpeed);
         }
@@ -61,6 +66,10 @@ public class Movement : MonoBehaviour
 
     private void Thrust()
     {
+        if (thrustFuel <= 0) return;
+
+        thrustFuel -= thrustDeduction * Time.deltaTime;
+
         rb.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
 
         if (!engineThrustParticles.isPlaying)
@@ -94,5 +103,10 @@ public class Movement : MonoBehaviour
     public void SetRight(bool val)
     {
         right = val;
+    }
+
+    public float GetFuelPercentage()
+    {
+        return Mathf.Clamp01(thrustFuel / 100f);
     }
 }

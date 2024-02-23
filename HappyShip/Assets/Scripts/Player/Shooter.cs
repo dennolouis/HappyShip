@@ -27,10 +27,6 @@ public class Shooter : MonoBehaviour
         }
 
         ammo = FindObjectOfType<Player>().GetAmmo();
-        if(ammo == 0)
-        {
-            ammo = 1;
-        }
     }
 
     // Update is called once per frame
@@ -136,10 +132,6 @@ public class Shooter : MonoBehaviour
     public void ResetAmmo()
     {
         ammo = FindObjectOfType<Player>().GetAmmo(); // Reset ammo to its original value
-        if (ammo == 0)
-        {
-            ammo = 1;
-        }
     }
 
 }

@@ -39,7 +39,11 @@ public class Player : MonoBehaviour
         soundManager = FindAnyObjectByType<SoundManager>();
 
         if (rocketIndex == 2)
+        {
             lives = maxLives * 2;
+            UpdateLives(0); //just update the UI
+        }
+            
 
         if (rocketIndex == 3)
         {
