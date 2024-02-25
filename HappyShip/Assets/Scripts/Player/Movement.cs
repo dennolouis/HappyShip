@@ -7,8 +7,9 @@ public class Movement : MonoBehaviour
     [SerializeField] AudioClip engineThrust;
     [SerializeField] AudioClip outOfFuelClip; // New audio clip for when fuel runs out
     [SerializeField] ParticleSystem engineThrustParticles;
-    [SerializeField] float thrustDeduction = 3f;
+    [SerializeField] float fuelConsumption = 5f;
     [SerializeField] float thrustFuel = 100f;
+    [SerializeField] float outOfFuelDownwardForce = 50f;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -32,10 +33,16 @@ public class Movement : MonoBehaviour
         ProcessInput();
 
         // Check if fuel has run out and play the out of fuel sound if it has
-        if (thrustFuel <= 0 && !outOfFuelSoundPlayed && outOfFuelClip != null)
+        if (thrustFuel <= 0)
         {
-            audioSource.PlayOneShot(outOfFuelClip); // Play the out of fuel sound
-            outOfFuelSoundPlayed = true; // Set the flag to true so it won't play again
+            if (!outOfFuelSoundPlayed && outOfFuelClip != null)
+            {
+                audioSource.PlayOneShot(outOfFuelClip); // Play the out of fuel sound
+                outOfFuelSoundPlayed = true; // Set the flag to true so it won't play again
+            }
+            
+            // Apply downward force
+            rb.AddForce(Vector3.down * outOfFuelDownwardForce * Time.deltaTime, ForceMode.Impulse);
         }
     }
 
@@ -70,7 +77,7 @@ public class Movement : MonoBehaviour
     {
         if (thrustFuel <= 0) return;
 
-        thrustFuel -= thrustDeduction * Time.deltaTime;
+        thrustFuel -= fuelConsumption * Time.deltaTime;
 
         rb.AddRelativeForce(Vector3.up * thrustForce * Time.deltaTime);
 

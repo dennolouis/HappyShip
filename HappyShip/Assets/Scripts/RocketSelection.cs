@@ -21,7 +21,9 @@ public class RocketSelection : MonoBehaviour
     string[] rocketDescriptions = { "Collects double the coins",
                                     "Shoots double the bullets",
                                     "Starts off with double health",
-                                    "Unlimited lives for 60 seconds"};
+                                    "Unlimited lives for 60 seconds",
+                                    "Uses less fuel",
+                                    "Has a protecting shield"};
 
     private void Awake()
     {

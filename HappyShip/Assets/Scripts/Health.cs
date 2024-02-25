@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
 
         if(health <= 0)
         {
-            ShowDestoryEffect();
+            ShowDestroyEffect();
         }
     }
 
@@ -29,12 +29,12 @@ public class Health : MonoBehaviour
                 Destroy(collision.gameObject);
                 break;
             case "Player":
-                ShowDestoryEffect();
+                ShowDestroyEffect();
                 break;
         }
     }
 
-    void ShowDestoryEffect()
+    public void ShowDestroyEffect()
     {
         if(destoryEffect)
         {
