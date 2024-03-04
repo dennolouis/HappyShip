@@ -13,6 +13,8 @@ public class PlayerData
     int adCount;
     int maxLives;
 
+    bool updateRocket = false;
+
 
     public PlayerData(Player player)
     {
@@ -23,6 +25,7 @@ public class PlayerData
         rockets = player.GetRockets();
         maxLives = player.GetMaxLives();
         ammo = player.GetAmmo();
+        updateRocket = player.GetUpdateRocket();
     }
 
     public int GetTotalCoins()
@@ -63,5 +66,15 @@ public class PlayerData
     public void SetAmmo(int x)
     {
         ammo = x > 0 ? x : 1;
+    }
+
+    public bool GetUpdateRocket()
+    {
+        return updateRocket;
+    }
+
+    public void SetUpdateRocket(bool val)
+    {
+        updateRocket = val;
     }
 }

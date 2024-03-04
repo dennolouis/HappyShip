@@ -40,7 +40,7 @@ public class NotificationManager : MonoBehaviour
             // You can specify a custom identifier which can be used to manage the notification later.
             // If you don't provide one, a unique string will be generated automatically.
             Identifier = "_notification_01",
-            Title = "Happy Ship",
+            Title = "Joyship",
             Body = "",
             Subtitle = "Come Back!",
             ShowInForeground = true,
@@ -79,7 +79,7 @@ public class NotificationManager : MonoBehaviour
 
 
         var notification = new AndroidNotification();
-        notification.Title = "Happy Ship";
+        notification.Title = "Joyship";
         notification.Text = "Come Back!";
         notification.LargeIcon = "icon_0";
         notification.FireTime = System.DateTime.Now.AddDays(3);

@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] int adCount;
 
+    bool updateRocket = false;
+
     int collectedCoins;
     int collectedStars;
 
@@ -177,6 +179,8 @@ public class Player : MonoBehaviour
         ammo = data.GetAmmo();
 
         lives = maxLives;
+
+        updateRocket = data.GetUpdateRocket();
     }
 
     public int GetAdCount()
@@ -251,5 +255,15 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(unlimitedLivesTimer);
         tempUnlimitedLives = false;
         print("no more unlimited");
+    }
+
+    public bool GetUpdateRocket()
+    {
+        return updateRocket;
+    }
+
+    public void SetUpdateRocket(bool val)
+    {
+        updateRocket = val;
     }
 }

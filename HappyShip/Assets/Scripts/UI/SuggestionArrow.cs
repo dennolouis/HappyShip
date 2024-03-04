@@ -11,7 +11,7 @@ public class SuggestionArrow : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
 
-        gameObject.SetActive(PlayerCanAffordRocket() || PLayerCanAffordHealth() || PlayerCanAffordAmmo());
+        gameObject.SetActive(PlayerCanAffordRocket() || PlayerCanAffordHealth() || PlayerCanAffordAmmo());
     }
 
     bool PlayerCanAffordRocket()
@@ -19,7 +19,7 @@ public class SuggestionArrow : MonoBehaviour
         return player.GetRockets().Contains(false) && player.GetTotalCoins() >= 200;
     }
 
-    bool PLayerCanAffordHealth()
+    bool PlayerCanAffordHealth()
     {
         return player.GetMaxLives() < 7 && player.GetTotalCoins() >= 50;
     }
