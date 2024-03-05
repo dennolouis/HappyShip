@@ -143,7 +143,6 @@ public class Player : MonoBehaviour
             totalCoins = 3000;
 
         SaveSystem.SavePlayer(this);
-
     }
 
     void SaveStarLogic()

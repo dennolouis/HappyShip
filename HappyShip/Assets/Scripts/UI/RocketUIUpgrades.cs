@@ -17,6 +17,9 @@ public class RocketUIUpgrades : MonoBehaviour
     [SerializeField] TMP_Text maxLives;
     [SerializeField] TMP_Text ammoText;
 
+    [SerializeField] TMP_Text healthCost;
+    [SerializeField] TMP_Text ammoCost;
+
     [SerializeField] GameObject buyAmmoBtn;
 
     GameObjectManager gameObjectManager;
@@ -61,9 +64,10 @@ public class RocketUIUpgrades : MonoBehaviour
 
     public void BuyHealth()
     {
-        if(player.GetTotalCoins() >= 50)
+        int cost = GetHealthCost();
+        if(player.GetTotalCoins() >= cost)
         {
-            player.PayWithCoins(50);
+            player.PayWithCoins(cost);
             player.UpdateMaxLives();
             FindObjectOfType<CoinUI>().UpdateUI();
             UpdateMaxLivesTMP();
@@ -72,9 +76,10 @@ public class RocketUIUpgrades : MonoBehaviour
 
     public void BuyAmmo()
     {
-        if (player.GetTotalCoins() > 75)
+        int cost = GetBulletCost();
+        if (player.GetTotalCoins() > cost)
         {
-            player.PayWithCoins(75);
+            player.PayWithCoins(cost);
             player.UpdateAmmo();
             FindObjectOfType<CoinUI>().UpdateUI();
             UpdateAmmoTMP();
@@ -93,8 +98,10 @@ public class RocketUIUpgrades : MonoBehaviour
 
         if(ammo >= 3)
         {
-            buyAmmoBtn.GetComponent<Button>().interactable = false;
+            buyAmmoBtn.GetComponent<Button>().interactable = false;;
         }
+
+        ammoCost.text = GetBulletCost().ToString();
     }
 
     void UpdateMaxLivesTMP()
@@ -110,6 +117,8 @@ public class RocketUIUpgrades : MonoBehaviour
         }
 
         UpdateHealthSlider();
+
+        healthCost.text = GetHealthCost().ToString();
           
     }
 
@@ -120,6 +129,22 @@ public class RocketUIUpgrades : MonoBehaviour
         float slideValue = (playerMaxLives - 3) / (float)(MAX_LIVES - 3);
 
         healthSlider.value = slideValue;
+    }
+
+    public int GetHealthCost()
+    {
+        int[] costs = { 25, 50, 75, 100, 100};
+        int costIdx = player.GetMaxLives() - 3;
+
+        return costs[costIdx];
+    }
+
+    public int GetBulletCost()
+    {
+        int[] costs = { 75, 150, 150};
+        int costIdx = player.GetAmmo() - 1;
+
+        return costs[costIdx];
     }
 }
 

@@ -930,7 +930,9 @@ MonoBehaviour:
   description: {fileID: 1930538421}
   maxLives: {fileID: 1413761510}
   ammoText: {fileID: 1236886220}
-  buyAmmoBtn: {fileID: 764598121}
+  healthCost: {fileID: 1168185793}
+  ammoCost: {fileID: 83479464}
+  buyAmmoBtn: {fileID: 83479462}
 --- !u!114 &131360269
 MonoBehaviour:
   m_ObjectHideFlags: 0
