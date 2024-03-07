@@ -932,7 +932,7 @@ MonoBehaviour:
   ammoText: {fileID: 1236886220}
   healthCost: {fileID: 1168185793}
   ammoCost: {fileID: 83479464}
-  buyAmmoBtn: {fileID: 83479462}
+  buyAmmoBtn: {fileID: 764598121}
 --- !u!114 &131360269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9806,7 +9806,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Upgrade Ammo
+          m_StringArgument: Shoot More Projectiles
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2063415738

@@ -96,12 +96,14 @@ public class RocketUIUpgrades : MonoBehaviour
         int ammo = player.GetAmmo();
         ammoText.text = ammo.ToString();
 
-        if(ammo >= 3)
+        ammoCost.text = GetBulletCost().ToString();
+
+        if (ammo >= 3)
         {
-            buyAmmoBtn.GetComponent<Button>().interactable = false;;
+            buyAmmoBtn.GetComponent<Button>().interactable = false;
+            ammoCost.text = "Max";
         }
 
-        ammoCost.text = GetBulletCost().ToString();
     }
 
     void UpdateMaxLivesTMP()
@@ -110,15 +112,16 @@ public class RocketUIUpgrades : MonoBehaviour
 
         maxLives.text = playerMaxLives.ToString();
 
+        healthCost.text = GetHealthCost().ToString();
+
         if (playerMaxLives >= MAX_LIVES)
         {
             maxLives.text += " MAX";
+            healthCost.text = "Max";
             buyHealthBtn.GetComponent<Button>().interactable = false;
         }
 
         UpdateHealthSlider();
-
-        healthCost.text = GetHealthCost().ToString();
           
     }
 
