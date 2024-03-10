@@ -5,6 +5,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip collectCoinClip;
     public AudioClip collectStarClip;
     public AudioClip collectHeartClip;
+    public AudioClip uIButtonPressClip;
 
     private AudioSource audioSource;
 
@@ -30,6 +31,11 @@ public class SoundManager : MonoBehaviour
     public void PlayCollectHeartSound()
     {
         PlaySound(collectHeartClip);
+    }
+
+    public void PlayUIButtonPressSound()
+    {
+        PlaySound(uIButtonPressClip);
     }
 
     private void PlaySound(AudioClip clip)

@@ -11372,7 +11372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.97138, y: 110.00157}
+  m_AnchoredPosition: {x: 19.97138, y: 111.4}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989937946
@@ -11410,7 +11410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect Stars
+  m_text: Collect Stars to unlock Levels
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97e8c40da0af341b1ac13324ee394736, type: 2}
   m_sharedMaterial: {fileID: -8561952922752131087, guid: 97e8c40da0af341b1ac13324ee394736,
