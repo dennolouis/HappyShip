@@ -19,7 +19,6 @@ public class MaybeSpawnPowerUp : MonoBehaviour
             GameObject spawnedPowerUp = Instantiate(objToSpawn, pos, Quaternion.identity);
             Destroy(spawnedPowerUp, 10f);
         }
-
         
     }
 }
