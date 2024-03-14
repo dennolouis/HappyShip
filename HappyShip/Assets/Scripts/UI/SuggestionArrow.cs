@@ -6,10 +6,12 @@ public class SuggestionArrow : MonoBehaviour
 {
 
     Player player;
-    // Start is called before the first frame update
+    RocketUIUpgrades upgrades;
+
     void Start()
     {
         player = FindObjectOfType<Player>();
+        upgrades = FindObjectOfType<RocketUIUpgrades>();
 
         gameObject.SetActive(PlayerCanAffordRocket() || PlayerCanAffordHealth() || PlayerCanAffordAmmo());
     }
@@ -21,12 +23,12 @@ public class SuggestionArrow : MonoBehaviour
 
     bool PlayerCanAffordHealth()
     {
-        return player.GetMaxLives() < 7 && player.GetTotalCoins() >= 50;
+        return player.GetMaxLives() < 7 && player.GetTotalCoins() >= upgrades.GetHealthCost();
     }
 
     bool PlayerCanAffordAmmo()
     {
-        return player.GetAmmo() < 3 && player.GetTotalCoins() >= 75;
+        return player.GetAmmo() < 3 && player.GetTotalCoins() >= upgrades.GetBulletCost();
     }
 
     public void HideArrow()

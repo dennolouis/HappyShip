@@ -2549,6 +2549,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 668102091828672124, guid: e07b22a9b63be45a59f2a5846971992f,
+        type: 3}
+      propertyPath: _bannerPosition
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6204721356247829672, guid: e07b22a9b63be45a59f2a5846971992f,
         type: 3}
       propertyPath: m_Name

@@ -24,11 +24,14 @@ public class RocketUIUpgrades : MonoBehaviour
 
     GameObjectManager gameObjectManager;
     Player player;
+    SoundManager soundManager;
 
     int MAX_LIVES = 7;
 
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
+
         // Assuming the GameObjectManager is attached to the same GameObject
         gameObjectManager = GetComponent<GameObjectManager>();
         // Hide all GameObjects at the start
@@ -71,6 +74,7 @@ public class RocketUIUpgrades : MonoBehaviour
             player.UpdateMaxLives();
             FindObjectOfType<CoinUI>().UpdateUI();
             UpdateMaxLivesTMP();
+            soundManager.PlayCollectCoinSound();
         }
     }
 
@@ -83,6 +87,7 @@ public class RocketUIUpgrades : MonoBehaviour
             player.UpdateAmmo();
             FindObjectOfType<CoinUI>().UpdateUI();
             UpdateAmmoTMP();
+            soundManager.PlayCollectCoinSound();
         }
     }
 
