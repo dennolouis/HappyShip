@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] int adCount;
 
+    float startTime;
+
     bool updateRocket = false;
 
     int collectedCoins;
@@ -40,13 +42,6 @@ public class Player : MonoBehaviour
         gameUI = FindAnyObjectByType<GameUI>();
         soundManager = FindAnyObjectByType<SoundManager>();
 
-        if (rocketIndex == 2)
-        {
-            lives = maxLives * 2;
-            UpdateLives(0); //just update the UI
-        }
-            
-
         if (rocketIndex == 3)
         {
             tempUnlimitedLives = true;
@@ -55,6 +50,8 @@ public class Player : MonoBehaviour
             
         if(rockets != null)
             rockets[0] = true;
+
+        startTime = Time.time;
     }
 
     public int GetRocketIndex()
@@ -75,7 +72,14 @@ public class Player : MonoBehaviour
     public void UpdateLives(int x)
     {
         if(x > 0)
+        {
             soundManager.PlayCollectHeartSound(); //play if increasing health
+            if(rocketIndex == 2)
+            {
+                lives += x; //double hearts 
+            }
+        }
+            
 
         if (tempUnlimitedLives)
             return;
@@ -264,5 +268,10 @@ public class Player : MonoBehaviour
     public void SetUpdateRocket(bool val)
     {
         updateRocket = val;
+    }
+
+    public float CalculateCompletedLevelTime()
+    {
+        return Time.time - startTime;
     }
 }

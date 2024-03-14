@@ -20,7 +20,7 @@ public class RocketSelection : MonoBehaviour
 
     string[] rocketDescriptions = { "Collects double the coins",
                                     "Shoots double the bullets",
-                                    "Starts off with double health",
+                                    "+2 lives on collected hearts",
                                     "Unlimited lives for 60 seconds",
                                     "Uses less fuel",
                                     "Has a protecting shield"};
