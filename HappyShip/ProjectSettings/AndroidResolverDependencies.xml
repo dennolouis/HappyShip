@@ -2,6 +2,7 @@
   <packages>
     <package>com.google.android.gms:play-services-ads:22.5.0</package>
     <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
+    <package>com.google.games:gpgs-plugin-support:0.10.14</package>
   </packages>
   <files />
   <settings>
