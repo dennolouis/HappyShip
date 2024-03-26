@@ -158,7 +158,12 @@ public class CollisionHandler : MonoBehaviour
 
     void StartSuccessSequence()
     {
+        int score = Mathf.RoundToInt(player.CalculateCompletedLevelTime());
+
+        CloudOnceServices.instance.SubmitScoreToLeaderboard(score);
+
         print(player.CalculateCompletedLevelTime());
+
         player.Save();
         isTransitioning = true;
         GetComponent<Movement>().enabled = false;

@@ -14,6 +14,20 @@ namespace CloudOnce
     /// </summary>
     public static class Leaderboards
     {
+        private static readonly UnifiedLeaderboard s_lvl1 = new UnifiedLeaderboard("lvl1",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            "lvl1"
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            ""
+#else
+            "lvl1"
+#endif
+            );
+
+        public static UnifiedLeaderboard lvl1
+        {
+            get { return s_lvl1; }
+        }
 
         public static string GetPlatformID(string internalId)
         {
@@ -24,7 +38,7 @@ namespace CloudOnce
 
         private static readonly Dictionary<string, UnifiedLeaderboard> s_leaderboardDictionary = new Dictionary<string, UnifiedLeaderboard>
         {
-
+            { "lvl1", s_lvl1 }
         };
     }
 }

@@ -27,6 +27,25 @@ namespace CloudOnce
         /// </summary>
         public static class LeaderboardIDs
         {
+            public static string lvl1
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl1";
+#elif UNITY_EDITOR
+                    return "lvl1";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
         }
     }
 }

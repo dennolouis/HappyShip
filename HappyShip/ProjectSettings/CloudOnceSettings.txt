@@ -1,6 +1,12 @@
 {
 	"AchievementIDs":[],
-	"LeaderboardIDs":[],
+	"LeaderboardIDs":[
+		{
+			"InternalID":"lvl1",
+			"AppleID":"lvl1",
+			"GoogleID":""
+		}
+	],
 	"CloudVariables":[],
 	"AppleSupported":true,
 	"GoogleSupported":true,

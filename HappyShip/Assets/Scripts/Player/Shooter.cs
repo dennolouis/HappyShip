@@ -105,7 +105,6 @@ public class Shooter : MonoBehaviour
                 {
                     // Visualize the raycast
                     Debug.DrawRay(ray.origin, ray.direction * hitInfo.distance, Color.red, 0.1f);
-                    print("hii");
 
                     // Shoot the projectile at the location of the hit gameObject
                     Vector3 targetPosition = hitInfo.collider.gameObject.transform.position;
