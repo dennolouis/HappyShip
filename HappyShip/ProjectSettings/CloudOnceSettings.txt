@@ -5,6 +5,46 @@
 			"InternalID":"lvl1",
 			"AppleID":"lvl1",
 			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl2",
+			"AppleID":"lvl2",
+			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl3",
+			"AppleID":"lvl3",
+			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl4",
+			"AppleID":"lvl4",
+			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl5",
+			"AppleID":"lvl5",
+			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl6",
+			"AppleID":"lvl6",
+			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl7",
+			"AppleID":"lvl7",
+			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl8",
+			"AppleID":"lvl8",
+			"GoogleID":""
+		},
+		{
+			"InternalID":"lvl9",
+			"AppleID":"lvl9",
+			"GoogleID":""
 		}
 	],
 	"CloudVariables":[],

@@ -46,6 +46,166 @@ namespace CloudOnce
 #endif
                 }
             }
+
+            public static string lvl2
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl2";
+#elif UNITY_EDITOR
+                    return "lvl2";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string lvl3
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl3";
+#elif UNITY_EDITOR
+                    return "lvl3";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string lvl4
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl4";
+#elif UNITY_EDITOR
+                    return "lvl4";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string lvl5
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl5";
+#elif UNITY_EDITOR
+                    return "lvl5";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string lvl6
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl6";
+#elif UNITY_EDITOR
+                    return "lvl6";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string lvl7
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl7";
+#elif UNITY_EDITOR
+                    return "lvl7";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string lvl8
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl8";
+#elif UNITY_EDITOR
+                    return "lvl8";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string lvl9
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "lvl9";
+#elif UNITY_EDITOR
+                    return "lvl9";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
         }
     }
 }
